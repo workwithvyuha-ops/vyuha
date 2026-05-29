@@ -303,6 +303,25 @@
             <ul class="detail-inclusions-list" id="detail-inclusions">
               <!-- Dynamically populated -->
             </ul>
+            
+            <button type="button" class="btn btn-secondary" id="detail-add-inclusion-trigger-btn" style="margin-top: 20px; padding: 10px 20px; font-size: 0.8rem;"><i class="fa-solid fa-plus" style="margin-right: 8px;"></i> Add Inclusion</button>
+
+            <!-- Dynamic Add Inclusion Sub-panel for Solo Ceremony -->
+            <div class="sub-modal-panel" id="detail-add-inclusion-panel" style="margin-top: 20px; border-color: rgba(255, 255, 255, 0.08);">
+              <h4 style="color: var(--color-gold); font-size: 1.1rem; margin-bottom: 15px; font-family: var(--font-serif-brand);">Add Custom Inclusion to Ceremony</h4>
+              
+              <div class="form-group">
+                <label for="detail-add-inclusion-select">Select Inclusion Item</label>
+                <select id="detail-add-inclusion-select" class="form-control" style="background-color: #121212;">
+                  <!-- Options dynamically populated from global list -->
+                </select>
+              </div>
+              
+              <div style="display: flex; gap: 15px; margin-top: 20px;">
+                <button type="button" class="btn btn-primary" id="detail-confirm-add-inclusion-btn" style="padding: 10px 20px; font-size: 0.8rem;">Add to Ceremony</button>
+                <button type="button" class="btn btn-secondary" id="detail-cancel-add-inclusion-btn" style="padding: 10px 20px; font-size: 0.8rem;">Cancel</button>
+              </div>
+            </div>
           </div>
           
           <div>
@@ -773,6 +792,9 @@
 
       // Render inclusions checklist dynamically
       renderDetailInclusions();
+      
+      // Reset Add Inclusion panel display in details view
+      document.getElementById('detail-add-inclusion-panel').style.display = 'none';
 
       // Quick Booking Service Title setting
       const bookBtn = document.getElementById('detail-book-btn');
@@ -816,6 +838,36 @@
       userInclusions[eventKey] = userInclusions[eventKey].filter(item => item !== inc);
       renderDetailInclusions();
     };
+
+    // Detail View Add Inclusion Mechanics
+    const detailAddIncPanel = document.getElementById('detail-add-inclusion-panel');
+    const detailAddIncSelect = document.getElementById('detail-add-inclusion-select');
+
+    document.getElementById('detail-add-inclusion-trigger-btn').addEventListener('click', () => {
+      detailAddIncSelect.innerHTML = globalInclusionsList.map(item => `<option value="${item}">${item}</option>`).join('');
+      detailAddIncPanel.style.display = 'block';
+      window.scrollTo({ top: detailAddIncPanel.offsetTop - 120, behavior: 'smooth' });
+    });
+
+    document.getElementById('detail-cancel-add-inclusion-btn').addEventListener('click', () => {
+      detailAddIncPanel.style.display = 'none';
+    });
+
+    document.getElementById('detail-confirm-add-inclusion-btn').addEventListener('click', () => {
+      const eventKey = state.activeDetailEvent;
+      const data = eventDetails[eventKey];
+      if (!data) return;
+
+      const eventTitle = data.key;
+      const selectedInc = detailAddIncSelect.value;
+
+      if (!userInclusions[eventTitle].includes(selectedInc)) {
+        userInclusions[eventTitle].push(selectedInc);
+      }
+
+      detailAddIncPanel.style.display = 'none';
+      renderDetailInclusions();
+    });
 
     // Book This Event quick direct popup in detail view
     document.getElementById('detail-book-btn').addEventListener('click', (e) => {
