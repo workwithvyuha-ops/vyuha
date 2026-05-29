@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Optimization -->
+  <title>Wedding Services Flow & Customizer | Vyuha Creation Studio</title>
+  <meta name="description" content="Explore Vyuha Creation's custom wedding event packages. Dive into Haldi, Mehndi, Sangeet, Reception, and Wedding details, or customize your own multi-day photography package.">
+  <meta name="keywords" content="custom wedding photography package builder, Haldi photoshoot deliverables, professional wedding videography inclusions">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       HEADER / NAVIGATION BAR
+       ========================================== -->
+  <header>
+    <div class="navbar">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Vyuha Creations Logo" style="height: 60px; width: auto; object-fit: contain;">
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      
+      <div class="nav-actions">
+        <a href="contact.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.75rem;">Book Now</a>
+        <button class="hamburger" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay Navigation -->
+  <ul class="mobile-nav">
+    <div class="mobile-nav-logo">
+      <img src="images/logo.png" alt="Vyuha Creations Logo" style="height: 70px; width: auto; object-fit: contain;">
+    </div>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">Our Story</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="contact.html" class="btn btn-primary" style="margin-top: 10px; width: auto; max-width: 250px;">Book A Shoot</a></li>
+    <div class="mobile-nav-footer">
+      <span class="mobile-nav-phone">+91 96400 50176</span>
+      <div class="social-links" style="justify-content: center; gap: 10px;">
+        <a href="https://www.instagram.com/vyuhacreations/" class="social-icon" target="_blank" style="width: 35px; height: 35px; font-size: 0.8rem;"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://youtube.com" class="social-icon" target="_blank" style="width: 35px; height: 35px; font-size: 0.8rem;"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+  </ul>
+
+  <!-- ==========================================
+       PAGE HERO
+       ========================================== -->
+  <section style="padding: 160px 40px 60px 40px; text-align: center; background: linear-gradient(180deg, var(--bg-dark-charcoal) 0%, var(--bg-pure-black) 100%); border-bottom: 1px solid rgba(255,255,255,0.02);">
+    <div class="container reveal">
+      <span class="script-text">Wedding Special</span>
+      <h1 style="font-size: clamp(2.2rem, 5vw, 4rem); font-family: var(--font-serif-brand); margin-top: 10px;">Wedding Service Flow</h1>
+      <p style="max-width: 600px; margin: 15px auto 0 auto; color: var(--color-text-secondary);">Explore details for each wedding celebration event, or customize your own multi-day bespoke package dynamically.</p>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       MAIN CONTENT SECTION
+       ========================================== -->
+  <section style="padding-top: 60px; padding-bottom: 100px;">
+    <div class="wedding-flow-container">
+      
+      <!-- CATEGORIES GRID -->
+      <div id="categories-grid-section" class="reveal">
+        <h2 class="section-title center" style="margin-bottom: 40px; text-align: center; font-size: clamp(1.8rem, 3vw, 2.5rem);">Wedding Event Categories</h2>
+        <div class="wedding-categories-grid">
+          <!-- Card 1: Haldi -->
+          <div class="wedding-category-card">
+            <div>
+              <div class="service-icon-wrap" style="margin: 0 auto 20px auto;"><i class="fa-solid fa-sun"></i></div>
+              <h3>Haldi</h3>
+              <p>Capture the high-contrast yellow overlays, playful water splashes, emotional family smears, and golden-hour vibes of your traditional Haldi ceremony.</p>
+            </div>
+            <button class="btn btn-secondary explore-details-btn" data-event="haldi" style="width: 100%;">Explore</button>
+          </div>
+
+          <!-- Card 2: Mehndi -->
+          <div class="wedding-category-card">
+            <div>
+              <div class="service-icon-wrap" style="margin: 0 auto 20px auto;"><i class="fa-solid fa-feather"></i></div>
+              <h3>Mehndi</h3>
+              <p>Document the beautiful onset of custom henna styling, the intricate bridal mehndi details, intimate family laughter, and emotional close-up portraits.</p>
+            </div>
+            <button class="btn btn-secondary explore-details-btn" data-event="mehndi" style="width: 100%;">Explore</button>
+          </div>
+
+          <!-- Card 3: Sangeet -->
+          <div class="wedding-category-card">
+            <div>
+              <div class="service-icon-wrap" style="margin: 0 auto 20px auto;"><i class="fa-solid fa-guitar"></i></div>
+              <h3>Sangeet</h3>
+              <p>High-energy stage performances, music-synced transitions, crowd light shows, artist performance captures, and cinematic slow-motion glances.</p>
+            </div>
+            <button class="btn btn-secondary explore-details-btn" data-event="sangeet" style="width: 100%;">Explore</button>
+          </div>
+
+          <!-- Card 4: Reception -->
+          <div class="wedding-category-card">
+            <div>
+              <div class="service-icon-wrap" style="margin: 0 auto 20px auto;"><i class="fa-solid fa-champagne-glasses"></i></div>
+              <h3>Reception</h3>
+              <p>Widescreen guest setups, stage interactions, luxury cake-cutting highlights, dramatic entrance lighting, and grand family compilations.</p>
+            </div>
+            <button class="btn btn-secondary explore-details-btn" data-event="reception" style="width: 100%;">Explore</button>
+          </div>
+
+          <!-- Card 5: Wedding -->
+          <div class="wedding-category-card">
+            <div>
+              <div class="service-icon-wrap" style="margin: 0 auto 20px auto;"><i class="fa-solid fa-hands-holding"></i></div>
+              <h3>Wedding</h3>
+              <p>Our complete visual chronicle. Intricate pheras rituals, mandap sacred moments, heavy drone coverage, emotional bidai departures, and premium albums.</p>
+            </div>
+            <button class="btn btn-secondary explore-details-btn" data-event="wedding" style="width: 100%;">Explore</button>
+          </div>
+
+          <!-- Card 6: Customize Own Package (Highlighted) -->
+          <div class="wedding-category-card customizer-promo-card">
+            <div>
+              <div class="service-icon-wrap" style="margin: 0 auto 20px auto; color: var(--color-gold); background: rgba(244, 160, 0, 0.15); border-color: var(--color-gold);"><i class="fa-solid fa-sliders"></i></div>
+              <h3 style="color: var(--color-gold);">Customize Package</h3>
+              <p>Build your custom event schedule. Pick your number of celebration days, add customized functions, and instantly request our best price.</p>
+            </div>
+            <button class="btn btn-primary" id="start-customizer-btn" style="width: 100%;">Customize Your Own Package</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- EVENT DETAIL VIEW (Hidden by default) -->
+      <div id="event-detail-section" class="event-detail-view">
+        <div class="detail-header">
+          <div class="service-icon-wrap" id="detail-icon" style="margin-bottom: 0; width: 50px; height: 50px; font-size: 1.4rem;"></div>
+          <h2 id="detail-title">Event Detail</h2>
+        </div>
+        
+        <div class="detail-grid">
+          <div>
+            <h4 style="color: var(--color-text-primary); margin-bottom: 20px; font-size: 1.2rem; font-family: var(--font-serif-display);">What's Included & Deliverables</h4>
+            <ul class="detail-inclusions-list" id="detail-inclusions">
+              <!-- Dynamically populated -->
+            </ul>
+          </div>
+          
+          <div>
+            <div class="detail-meta-box">
+              <h4>Event Coverage Parameters</h4>
+              <div class="meta-item"><strong>Squad Size:</strong> <span id="meta-crew">1 Photographer</span></div>
+              <div class="meta-item"><strong>Photography:</strong> <span id="meta-photo">Traditional & Candid</span></div>
+              <div class="meta-item"><strong>Videography:</strong> <span id="meta-video">Full HD raw clips</span></div>
+              <div class="meta-item"><strong>Teasers/Reels:</strong> <span id="meta-reels">1x Dynamic Reel</span></div>
+              <div class="meta-item"><strong>Drone Shots:</strong> <span id="meta-drone">Not Included</span></div>
+              <div class="meta-item"><strong>Album Layout:</strong> <span id="meta-album">Cloud Gallery Link</span></div>
+            </div>
+            
+            <div style="margin-top: 30px; display: flex; gap: 15px; flex-direction: column;">
+              <button class="btn btn-primary whatsapp-booking-btn" id="detail-book-btn" style="width: 100%;">Book This Event</button>
+              <button class="btn btn-secondary" id="back-to-grid-btn" style="width: 100%;"><i class="fa-solid fa-arrow-left" style="margin-right: 8px;"></i> Back to Categories</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CUSTOMIZER STEP WIZARD (Hidden by default) -->
+      <div id="customizer-wizard-section" class="customizer-wizard-section">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 20px;">
+          <h2 style="font-family: var(--font-serif-brand); color: var(--color-gold); margin: 0; font-size: clamp(1.5rem, 3vw, 2.2rem);">Bespoke Package Designer</h2>
+          <button class="btn btn-secondary" id="cancel-customizer-btn" style="padding: 10px 20px; font-size: 0.75rem;"><i class="fa-solid fa-xmark"></i> Exit</button>
+        </div>
+
+        <div class="wizard-steps-indicator">
+          <div class="wizard-step-dot active" id="dot-step-1"></div>
+          <div class="wizard-step-dot" id="dot-step-2"></div>
+          <div class="wizard-step-dot" id="dot-step-3"></div>
+        </div>
+
+        <!-- Step 1: Duration Selection -->
+        <div class="wizard-step-content active" id="step-1-content">
+          <h3 class="section-title center" style="text-align: center; margin-bottom: 15px; font-size: 1.4rem;">Select Event Duration</h3>
+          <p style="text-align: center; max-width: 500px; margin: 0 auto 30px auto; font-size: 0.95rem;">How many days is your grand wedding celebration scheduled for? Select to map out schedules.</p>
+          
+          <div class="days-select-grid">
+            <div class="day-select-card active" data-days="1">1 Day</div>
+            <div class="day-select-card" data-days="2">2 Days</div>
+            <div class="day-select-card" data-days="3">3 Days</div>
+            <div class="day-select-card" data-days="4">4 Days</div>
+            <div class="day-select-card" data-days="5">5 Days</div>
+            <div class="day-select-card" data-days="6">6 Days</div>
+            <div class="day-select-card" data-days="7">7 Days</div>
+          </div>
+
+          <div style="margin-top: 40px; text-align: right;">
+            <button class="btn btn-primary" id="next-to-step-2-btn">Next Step <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></button>
+          </div>
+        </div>
+
+        <!-- Step 2: Functions Selection -->
+        <div class="wizard-step-content" id="step-2-content">
+          <h3 class="section-title center" style="text-align: center; margin-bottom: 15px; font-size: 1.4rem;">Add Celebration Functions</h3>
+          <p style="text-align: center; max-width: 500px; margin: 0 auto 30px auto; font-size: 0.95rem;">Which functions would you like Vyuha Creation to capture? You can select multiple event types.</p>
+
+          <div class="events-toggle-grid">
+            <div class="event-toggle-card" data-event-type="Haldi">
+              <i class="fa-solid fa-circle-check checkbox-icon"></i>
+              <div style="font-size: 2rem; color: var(--color-gold);"><i class="fa-solid fa-sun"></i></div>
+              <h4>Add Haldi</h4>
+            </div>
+
+            <div class="event-toggle-card" data-event-type="Mehndi">
+              <i class="fa-solid fa-circle-check checkbox-icon"></i>
+              <div style="font-size: 2rem; color: var(--color-gold);"><i class="fa-solid fa-feather"></i></div>
+              <h4>Add Mehndi</h4>
+            </div>
+
+            <div class="event-toggle-card" data-event-type="Sangeet">
+              <i class="fa-solid fa-circle-check checkbox-icon"></i>
+              <div style="font-size: 2rem; color: var(--color-gold);"><i class="fa-solid fa-guitar"></i></div>
+              <h4>Add Sangeet</h4>
+            </div>
+
+            <div class="event-toggle-card" data-event-type="Reception">
+              <i class="fa-solid fa-circle-check checkbox-icon"></i>
+              <div style="font-size: 2rem; color: var(--color-gold);"><i class="fa-solid fa-champagne-glasses"></i></div>
+              <h4>Add Reception</h4>
+            </div>
+
+            <div class="event-toggle-card active" data-event-type="Wedding">
+              <i class="fa-solid fa-circle-check checkbox-icon"></i>
+              <div style="font-size: 2rem; color: var(--color-gold);"><i class="fa-solid fa-hands-holding"></i></div>
+              <h4>Add Wedding</h4>
+            </div>
+          </div>
+
+          <div style="margin-top: 40px; display: flex; justify-content: space-between;">
+            <button class="btn btn-secondary" id="back-to-step-1-btn"><i class="fa-solid fa-arrow-left" style="margin-right: 8px;"></i> Back</button>
+            <button class="btn btn-primary" id="next-to-step-3-btn">Review Summary <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></button>
+          </div>
+        </div>
+
+        <!-- Step 3: Package Summary -->
+        <div class="wizard-step-content" id="step-3-content">
+          <h3 class="section-title center" style="text-align: center; margin-bottom: 15px; font-size: 1.4rem;">Your Custom Package Details</h3>
+          <p style="text-align: center; max-width: 500px; margin: 0 auto 30px auto; font-size: 0.95rem;">Review your custom schedule structure and deliverables summary below before locking.</p>
+
+          <div class="wizard-summary-wrapper">
+            <h4 style="color: var(--color-gold); font-size: 1.2rem; font-family: var(--font-serif-brand); margin-bottom: 15px;">Summary Matrix</h4>
+            <p style="font-size: 1rem; color: var(--color-text-primary); margin-bottom: 10px;"><strong>Celebration Length:</strong> <span id="summary-days-count" style="color: var(--color-gold);">1 Day</span></p>
+            <p style="font-size: 1rem; color: var(--color-text-primary); margin-bottom: 20px;"><strong>Selected Events:</strong> <span id="summary-events-list" style="color: var(--color-gold);">Wedding</span></p>
+            
+            <h4 style="color: var(--color-gold); font-size: 1.1rem; margin-top: 25px; margin-bottom: 10px;">Bespoke Inclusions & Deliverables:</h4>
+            <ul class="summary-details-list" id="summary-inclusions-checklist">
+              <!-- Dynamically mapped -->
+            </ul>
+          </div>
+
+          <div style="margin-top: 40px; display: flex; justify-content: space-between;">
+            <button class="btn btn-secondary" id="back-to-step-2-btn"><i class="fa-solid fa-arrow-left" style="margin-right: 8px;"></i> Back</button>
+            <button class="btn btn-primary" id="show-price-btn" style="box-shadow: var(--gold-button-glow);"><i class="fa-solid fa-tags" style="margin-right: 8px;"></i> Show Us the Best Price</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       INQUIRY POPUP MODAL (Glassmorphic)
+       ========================================== -->
+  <div class="modal-overlay" id="inquiry-modal-overlay">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="close-modal-btn" aria-label="Close Form"><i class="fa-solid fa-xmark"></i></button>
+      
+      <div style="text-align: center; margin-bottom: 30px;">
+        <span class="script-text" style="font-size: 2rem;">Vyuha Inquiry</span>
+        <h3 style="font-family: var(--font-serif-brand); color: var(--color-gold); font-size: 1.6rem; margin-top: 5px;">Unlock Best Custom Price</h3>
+        <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-top: 8px; margin-bottom: 0;">Submit your details. We will compile your package sheet and download your direct PDF brochure instantly.</p>
+      </div>
+
+      <form id="inquiry-form">
+        <!-- Hidden/ReadOnly fields for customizer data -->
+        <input type="hidden" id="form-days-count" name="days_count" value="1">
+        <input type="hidden" id="form-events-list" name="events_list" value="Wedding">
+        
+        <div class="form-group">
+          <label for="customer-name">Full Name *</label>
+          <input type="text" id="customer-name" class="form-control" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="customer-phone">Phone Number (WhatsApp Active) *</label>
+          <input type="tel" id="customer-phone" class="form-control" placeholder="Enter active contact number" required>
+        </div>
+
+        <div class="form-group">
+          <label for="customer-email">Email Address (Optional)</label>
+          <input type="email" id="customer-email" class="form-control" placeholder="Enter email address">
+        </div>
+
+        <div class="form-group">
+          <label for="event-date">Tentative Celebration Date *</label>
+          <input type="date" id="event-date" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label>Selected Schedule Summary</label>
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--border-radius-md); padding: 15px; font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.5;">
+            <p><strong>Duration Selected:</strong> <span id="modal-summary-days" style="color: var(--color-gold);">1 Day</span></p>
+            <p style="margin-top: 5px;"><strong>Events Chosen:</strong> <span id="modal-summary-events" style="color: var(--color-gold);">Wedding</span></p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="customer-message">Special Message / Additional Requirements</label>
+          <textarea id="customer-message" class="form-control" placeholder="Tell us more about your visual expectations, venues, custom requests..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px; margin-top: 10px; font-weight: 700; box-shadow: var(--gold-button-glow);">
+          <i class="fa-solid fa-paper-plane" style="margin-right: 8px;"></i> Submit Details & Get Price
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-column footer-about">
+        <a href="index.html" class="logo">
+          <img src="images/logo.png" alt="Vyuha Creations Logo" style="height: 65px; width: auto; object-fit: contain;">
+        </a>
+        <p>A premium cinematic digital experience transforming fleeting memories into timeless, color-graded visual legacies. Trusted for weddings, corporate coverage, and high-energy college shoots.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/vyuhacreations/" class="social-icon" target="_blank" aria-label="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://youtube.com" class="social-icon" target="_blank" aria-label="Youtube Channel"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://facebook.com" class="social-icon" target="_blank" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="services.html">Services Portfolio</a></li>
+          <li><a href="gallery.html">Interactive Gallery</a></li>
+          <li><a href="contact.html">Book / Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Our Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html#wedding">Weddings Photography</a></li>
+          <li><a href="services.html#cinematic">Cinematic Wedding Reels</a></li>
+          <li><a href="services.html#pre-wedding">Pre-Wedding Shoots</a></li>
+          <li><a href="services.html#corporate">Corporate Coverage</a></li>
+          <li><a href="services.html#events">Cultural & College Shows</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Studio Details</h4>
+        <div class="footer-contact-info">
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Nagannas Home, beside Rising Kids School, Gurunagar Colony, Ravindra Nagar, Sadashivpet, Medak, Telangana 502291</span>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+91 96400 50176</span>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>workwithvyuha@gmail.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <span>&copy; 2026 Vyuha Creations. All Rights Reserved. Designed for premium visuals.</span>
+      <span>ISO 9001:2015 Visual Arts Studio</span>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Widget Button -->
+  <a href="#" class="whatsapp-widget whatsapp-booking-btn" data-service="Custom Wedding Package Flow Consultation" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- ==========================================
+       SCRIPTS & jsPDF CDN
+       ========================================== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="js/main.js"></script>
+  
+  <script>
+    // ==========================================
+    // WEDDING FLOW INTERACTIVE MECHANICS
+    // ==========================================
+    
+    // Inclusions data maps
+    const eventDetails = {
+      haldi: {
+        title: "Haldi Ceremony Inclusions",
+        iconClass: "fa-sun",
+        crew: "2 Crew Members (1 Candid Photographer + 1 Traditional Videographer)",
+        photo: "High-contrast traditional captures, detailing ritual smear animations, family interactions.",
+        video: "Complete traditional capture, raw footage logs, color-graded cinematic slow-motion highlights.",
+        reels: "1x Premium edited Instagram Reel (9:16 vertical storytelling format)",
+        drone: "Optional Aerial sweeps of venue and ritual courtyard (Available on request)",
+        album: "Full access to highly secured digital cloud gallery, print-ready high-res files.",
+        inclusions: [
+          "Complete coverage of traditional Haldi paste application ceremonies.",
+          "Dynamic capturing of interactive water/flower shower ritual highlights.",
+          "Custom graded cinematic focus capturing laughter, smears, and family blessing dynamics.",
+          "Snappy mobile-optimized vertical story edits with audio synchronization.",
+          "Over 60+ beautifully color-graded, high-resolution processed digital frames.",
+          "Complete raw video footage deliverables compiled into folders."
+        ]
+      },
+      mehndi: {
+        title: "Mehndi Ceremony Inclusions",
+        iconClass: "fa-feather",
+        crew: "2 Crew Members (1 Candid Photographer + 1 Traditional Photographer)",
+        photo: "Creative focus on detailed bridal Mehndi custom layouts, intimate smiles, traditional setups.",
+        video: "B-roll captures of design steps, ambient audio recordings, creative highlights.",
+        reels: "1x Dedicated aesthetic Instagram story compilation reel",
+        drone: "Not Included in basic setup",
+        album: "Dedicated custom cloud download link with high-resolution file access.",
+        inclusions: [
+          "Close-up high-definition capturing of bridal Mehndi drawing process details.",
+          "Creative portraits of bride, bride's friends, and close family networks.",
+          "Full candid coverage of home celebrations, music highlights, and ambient interactions.",
+          "Snappy transition vertical reels matching trending organic audio beats.",
+          "Over 80+ detailed retouched high-contrast digital frames.",
+          "Complete print-ready cloud download link with zero expiration."
+        ]
+      },
+      sangeet: {
+        title: "Sangeet Night Inclusions",
+        iconClass: "fa-guitar",
+        crew: "3 Crew Members (1 Candid Photographer + 1 Traditional Photographer + 1 Cinematic Videographer)",
+        photo: "Action-freeze concert stage captures, crowd energy, dynamic light reflections.",
+        video: "Dual-angle synchronized concert coverage, raw stage recordings, cinematically graded audio.",
+        reels: "2x Trending, fast-cutting music-synced performance Reels",
+        drone: "Optional multi-sweep drone coverage of grand entry and outdoor staging.",
+        album: "Secure aesthetic cloud portal folder link + custom slide-preview.",
+        inclusions: [
+          "Complete multi-camera documentation of high-energy stage performance choreographies.",
+          "Creative crowd, laser lighting sweeps, and performance artist detail captures.",
+          "Full soundboard synced audio compilation ensuring crisp vocal clarity.",
+          "A stunning 3-Minute Sangeet Aftermovie color-graded with custom cinema LUTs.",
+          "Over 120+ high-definition action processed digital frames.",
+          "Fast-track 72-hour turnaround for quick digital reels delivery."
+        ]
+      },
+      reception: {
+        title: "Grand Reception Inclusions",
+        iconClass: "fa-champagne-glasses",
+        crew: "4 Crew Members (2 Traditional Photographers + 2 Cinematic Videographers)",
+        photo: "Full-venue stage family compilations, stage arrivals, elegant couples portrait arrays.",
+        video: "Stage entry sweeps, full-length guest blessings recordings, soundboards, dynamic cuts.",
+        reels: "2x Snap visual highlights story reels",
+        drone: "Included (Dynamic outdoor drone venue establishing sweeps)",
+        album: "Grand lay-flat digital layout archive portal link.",
+        inclusions: [
+          "Meticulous, crisp stage-by-stage capturing of guest greeting arrays and stage setups.",
+          "High-contrast couples portrait sweeps in reception designer attire.",
+          "Complete multi-angle documentation of grand entry, cake-cutting, and first dance.",
+          "An elite 5-Minute Reception highlights cinema trailer graded frame-by-frame.",
+          "Over 200+ beautifully polished high-definition digital frames.",
+          "Drone establishing sweeps capturing venue grandeur, car arrivals, and night stage layout."
+        ]
+      },
+      wedding: {
+        title: "Grand Wedding Day Inclusions",
+        iconClass: "fa-hands-holding",
+        crew: "6 Crew Members (2 Candid Photographers + 2 Traditional Photographers + 2 Cinematic Videographers)",
+        photo: "Full traditional rituals coverage, deep raw emotions, bidai details, grand mandap setups.",
+        video: "Complete multi-angle ritual video records, emotional audio lines, drone sweeps, cinema film.",
+        reels: "3x Snappy vertical Instagram reels, vertical storytelling highlights",
+        drone: "Included (Full mandatory mandatory drone grids for mandap & hall)",
+        album: "Premium Lay-Flat Leather Album (250+ Pages, processed photos) + digital archive folder.",
+        inclusions: [
+          "Comprehensive dual-team captures documenting bride & groom pre-wedding dressing highlights.",
+          "Meticulous multi-angle coverage capturing the exact sacred pheras, mangalsutra, and sindoor milestones.",
+          "High-contrast emotional captures of the Bidai departure rituals.",
+          "A magnificent 10-Minute Color-Graded Cinematic Legacy Film with vocal sound syncs.",
+          "Over 350+ fully custom-retouched high-resolution digital master files.",
+          "Premium physical leather-bound lay-flat custom printed visual legacy album.",
+          "Advanced aerial drone sequences capturing entry processions and outdoor mandaps."
+        ]
+      }
+    };
+
+    // DOM Selectors
+    const categoriesSection = document.getElementById('categories-grid-section');
+    const detailSection = document.getElementById('event-detail-section');
+    const customizerSection = document.getElementById('customizer-wizard-section');
+    const inquiryModal = document.getElementById('inquiry-modal-overlay');
+    
+    // Back to Grid
+    document.getElementById('back-to-grid-btn').addEventListener('click', () => {
+      detailSection.style.display = 'none';
+      categoriesSection.style.display = 'block';
+      window.scrollTo({ top: categoriesSection.offsetTop - 100, behavior: 'smooth' });
+    });
+
+    // Explore Buttons
+    document.querySelectorAll('.explore-details-btn').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const eventName = e.target.getAttribute('data-event');
+        populateEventDetails(eventName);
+      });
+    });
+
+    function populateEventDetails(eventKey) {
+      const data = eventDetails[eventKey];
+      if (!data) return;
+
+      document.getElementById('detail-title').textContent = data.title;
+      
+      // Icon
+      const iconWrap = document.getElementById('detail-icon');
+      iconWrap.innerHTML = `<i class="fa-solid ${data.iconClass}"></i>`;
+
+      // Meta parameters
+      document.getElementById('meta-crew').textContent = data.crew;
+      document.getElementById('meta-photo').textContent = data.photo;
+      document.getElementById('meta-video').textContent = data.video;
+      document.getElementById('meta-reels').textContent = data.reels;
+      document.getElementById('meta-drone').textContent = data.drone;
+      document.getElementById('meta-album').textContent = data.album;
+
+      // Inclusions list
+      const listContainer = document.getElementById('detail-inclusions');
+      listContainer.innerHTML = '';
+      data.inclusions.forEach(inc => {
+        listContainer.innerHTML += `<li><i class="fa-solid fa-circle-check"></i> <span>${inc}</span></li>`;
+      });
+
+      // Quick Booking Service Title setting
+      const bookBtn = document.getElementById('detail-book-btn');
+      bookBtn.setAttribute('data-service', `Wedding - ${eventKey.toUpperCase()}`);
+      
+      // Toggle views
+      categoriesSection.style.display = 'none';
+      detailSection.style.display = 'block';
+      window.scrollTo({ top: detailSection.offsetTop - 120, behavior: 'smooth' });
+    }
+
+    // ==========================================
+    // PACKAGE CUSTOMIZER MECHANICS
+    // ==========================================
+    let customDays = 1;
+    let selectedEvents = ['Wedding'];
+
+    // Start Customizer
+    document.getElementById('start-customizer-btn').addEventListener('click', () => {
+      categoriesSection.style.display = 'none';
+      customizerSection.style.display = 'block';
+      resetCustomizer();
+      window.scrollTo({ top: customizerSection.offsetTop - 120, behavior: 'smooth' });
+    });
+
+    // Exit Customizer
+    document.getElementById('cancel-customizer-btn').addEventListener('click', () => {
+      customizerSection.style.display = 'none';
+      categoriesSection.style.display = 'block';
+      window.scrollTo({ top: categoriesSection.offsetTop - 100, behavior: 'smooth' });
+    });
+
+    function resetCustomizer() {
+      customDays = 1;
+      selectedEvents = ['Wedding'];
+      
+      // Reset Step active views
+      switchStep(1);
+      
+      // Reset cards active states
+      document.querySelectorAll('.day-select-card').forEach(card => {
+        card.classList.remove('active');
+        if(card.getAttribute('data-days') === '1') card.classList.add('active');
+      });
+
+      document.querySelectorAll('.event-toggle-card').forEach(card => {
+        card.classList.remove('active');
+        if(card.getAttribute('data-event-type') === 'Wedding') card.classList.add('active');
+      });
+    }
+
+    function switchStep(stepNum) {
+      // Hide all content
+      document.querySelectorAll('.wizard-step-content').forEach(c => c.classList.remove('active'));
+      document.querySelectorAll('.wizard-step-dot').forEach(d => d.classList.remove('active'));
+
+      // Show target
+      document.getElementById(`step-${stepNum}-content`).classList.add('active');
+      document.getElementById(`dot-step-${stepNum}`).classList.add('active');
+    }
+
+    // Day Selection Actions
+    document.querySelectorAll('.day-select-card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        document.querySelectorAll('.day-select-card').forEach(c => c.classList.remove('active'));
+        e.target.classList.add('active');
+        customDays = parseInt(e.target.getAttribute('data-days'));
+      });
+    });
+
+    // Event Selection Actions
+    document.querySelectorAll('.event-toggle-card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        const toggleCard = e.currentTarget;
+        const eventType = toggleCard.getAttribute('data-event-type');
+
+        if (toggleCard.classList.contains('active')) {
+          // Cannot remove Wedding if it's the only one left
+          if (eventType === 'Wedding' && selectedEvents.length === 1) return;
+          
+          toggleCard.classList.remove('active');
+          selectedEvents = selectedEvents.filter(ev => ev !== eventType);
+        } else {
+          toggleCard.classList.add('active');
+          if (!selectedEvents.includes(eventType)) {
+            selectedEvents.push(eventType);
+          }
+        }
+      });
+    });
+
+    // Step 1 Navigation
+    document.getElementById('next-to-step-2-btn').addEventListener('click', () => {
+      switchStep(2);
+    });
+
+    // Step 2 Navigation
+    document.getElementById('back-to-step-1-btn').addEventListener('click', () => {
+      switchStep(1);
+    });
+    
+    document.getElementById('next-to-step-3-btn').addEventListener('click', () => {
+      compileSummary();
+      switchStep(3);
+    });
+
+    // Step 3 Navigation
+    document.getElementById('back-to-step-2-btn').addEventListener('click', () => {
+      switchStep(2);
+    });
+
+    function compileSummary() {
+      document.getElementById('summary-days-count').textContent = `${customDays} Day${customDays > 1 ? 's' : ''}`;
+      document.getElementById('summary-events-list').textContent = selectedEvents.join(', ');
+      
+      const checklistContainer = document.getElementById('summary-inclusions-checklist');
+      checklistContainer.innerHTML = '';
+
+      // Determine general inclusions list based on selected functions
+      let consolidatedInclusions = [];
+      
+      if (selectedEvents.includes('Haldi')) {
+        consolidatedInclusions.push("Haldi: Yellow-theme setups, flower shower ritual captures, 1x story reel.");
+      }
+      if (selectedEvents.includes('Mehndi')) {
+        consolidatedInclusions.push("Mehndi: Detailed bridal mehndi close-ups, creative home session, 1x aesthetic reel.");
+      }
+      if (selectedEvents.includes('Sangeet')) {
+        consolidatedInclusions.push("Sangeet: Multi-camera stage performance capture, sound syncs, 3-min aftermovie.");
+      }
+      if (selectedEvents.includes('Reception')) {
+        consolidatedInclusions.push("Reception: Stage grand couples portraitures, cake cutting, dynamic entry drone sweeps.");
+      }
+      if (selectedEvents.includes('Wedding')) {
+        consolidatedInclusions.push("Wedding: Sacred pheras coverage, emotional Bidai files, 10-min cinematic legacy movie.");
+      }
+
+      // Add general duration inclusions
+      consolidatedInclusions.push(`High-End Camera squad scale matched to capture over ${customDays} full celebration days.`);
+      consolidatedInclusions.push("Uncapped high-resolution digital master processed deliveries via private cloud folders.");
+      
+      if (customDays >= 3) {
+        consolidatedInclusions.push("Premium Lay-Flat Leather Printed Custom visual legacy album included!");
+      } else {
+        consolidatedInclusions.push("Premium layout print canvas options included.");
+      }
+
+      consolidatedInclusions.forEach(item => {
+        checklistContainer.innerHTML += `<li><i class="fa-solid fa-circle-check" style="color: var(--color-gold); margin-right: 10px;"></i> ${item}</li>`;
+      });
+    }
+
+    // ==========================================
+    // POPUP MODAL & FORM MECHANICAL LOGIC
+    // ==========================================
+    const modalOverlay = document.getElementById('inquiry-modal-overlay');
+    
+    document.getElementById('show-price-btn').addEventListener('click', () => {
+      // Pre-fill hidden inputs and read-only text in modal
+      document.getElementById('form-days-count').value = customDays;
+      document.getElementById('form-events-list').value = selectedEvents.join(', ');
+      
+      document.getElementById('modal-summary-days').textContent = `${customDays} Day${customDays > 1 ? 's' : ''}`;
+      document.getElementById('modal-summary-events').textContent = selectedEvents.join(', ');
+
+      modalOverlay.classList.add('active');
+    });
+
+    document.getElementById('close-modal-btn').addEventListener('click', closeModal);
+    
+    // Close modal if clicking overlay background
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) closeModal();
+    });
+
+    function closeModal() {
+      modalOverlay.classList.remove('active');
+    }
+
+    // Book This Event quick direct link setting
+    document.getElementById('detail-book-btn').addEventListener('click', (e) => {
+      const selectedService = e.target.getAttribute('data-service');
+      window.location.href = `contact.html?service=${encodeURIComponent(selectedService)}`;
+    });
+
+    // ==========================================
+    // FORM SUBMISSION & jsPDF COMPILER ENGINE
+    // ==========================================
+    document.getElementById('inquiry-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Collect data
+      const name = document.getElementById('customer-name').value;
+      const phone = document.getElementById('customer-phone').value;
+      const email = document.getElementById('customer-email').value || "Not provided";
+      const date = document.getElementById('event-date').value;
+      const message = document.getElementById('customer-message').value || "No special requests.";
+
+      // Success modal feedback
+      alert(`Thank you, ${name}! Your inquiry has been logged successfully.\nOur admin has received your details.\n\nPress OK to download your customized package PDF brochure instantly.`);
+      
+      // Trigger jsPDF dynamic compiler
+      generatePDF(name, phone, email, date, customDays, selectedEvents, message);
+      
+      closeModal();
+      
+      // Reset form
+      document.getElementById('inquiry-form').reset();
+    });
+
+    function generatePDF(name, phone, email, date, days, events, message) {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF({
+        orientation: "portrait",
+        unit: "mm",
+        format: "a4"
+      });
+
+      // Styling parameters
+      const goldColor = [244, 160, 0];
+      const darkColor = [18, 18, 18];
+      const lightGray = [120, 120, 120];
+
+      // Page Background
+      doc.setFillColor(250, 250, 250);
+      doc.rect(0, 0, 210, 297, "F");
+
+      // Branded Top Header Background
+      doc.setFillColor(darkColor[0], darkColor[1], darkColor[2]);
+      doc.rect(0, 0, 210, 45, "F");
+
+      // Brand Logo / Header Text
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(22);
+      doc.setTextColor(goldColor[0], goldColor[1], goldColor[2]);
+      doc.text("VYUHA CREATION", 20, 22);
+
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(10);
+      doc.setTextColor(245, 245, 245);
+      doc.text("Photography & Cinematic Studio | Official Custom Brochure", 20, 28);
+
+      // Contact detail row in header
+      doc.setFontSize(8);
+      doc.setTextColor(170, 170, 170);
+      doc.text("Contact: +91 96400 50176  |  Email: workwithvyuha@gmail.com  |  Telangana", 20, 36);
+
+      // Document Title Body Section
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(16);
+      doc.setTextColor(darkColor[0], darkColor[1], darkColor[2]);
+      doc.text("Bespoke Wedding Package Proposal", 20, 60);
+
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(10);
+      doc.setTextColor(lightGray[0], lightGray[1], lightGray[2]);
+      doc.text(`Date Created: ${new Date().toLocaleDateString()} | Proposal ID: VC-${Math.floor(1000 + Math.random() * 9000)}`, 20, 66);
+      doc.line(20, 70, 190, 70);
+
+      // Client Details Section
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(11);
+      doc.setTextColor(goldColor[0], goldColor[1], goldColor[2]);
+      doc.text("Client & Celebration Details", 20, 80);
+
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(10);
+      doc.setTextColor(darkColor[0], darkColor[1], darkColor[2]);
+      
+      doc.text(`Client Name: ${name}`, 20, 88);
+      doc.text(`Contact Number: ${phone}`, 20, 94);
+      doc.text(`Email Address: ${email}`, 20, 100);
+      doc.text(`Tentative Celebration Date: ${date}`, 20, 106);
+
+      // Package Configuration Section
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(11);
+      doc.setTextColor(goldColor[0], goldColor[1], goldColor[2]);
+      doc.text("Bespoke Package Selection Matrix", 20, 120);
+
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(10);
+      doc.setTextColor(darkColor[0], darkColor[1], darkColor[2]);
+      doc.text(`Celebration Length: ${days} Celebration Day${days > 1 ? 's' : ''}`, 20, 128);
+      doc.text(`Capture Functions Selected: ${events.join(', ')}`, 20, 134);
+
+      // Detailed Inclusions Section
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(11);
+      doc.setTextColor(goldColor[0], goldColor[1], goldColor[2]);
+      doc.text("Guaranteed Deliverables & Inclusions Checklist", 20, 148);
+
+      let inclusionY = 156;
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(9);
+      doc.setTextColor(60, 60, 60);
+
+      // Map inclusions
+      let consolidatedInclusions = [];
+      if (events.includes('Haldi')) {
+        consolidatedInclusions.push("- Haldi: Flower shower capture, yellow-theme highlights, 1x vertical story reel.");
+      }
+      if (events.includes('Mehndi')) {
+        consolidatedInclusions.push("- Mehndi: Fine bridal henna details, intimate family captures, 1x custom reel.");
+      }
+      if (events.includes('Sangeet')) {
+        consolidatedInclusions.push("- Sangeet: Stage dancing action freeze, dual soundboards, 3-min custom aftermovie.");
+      }
+      if (events.includes('Reception')) {
+        consolidatedInclusions.push("- Reception: Grand stage greetings coverage, couples portrait arcs, venue drone sweeps.");
+      }
+      if (events.includes('Wedding')) {
+        consolidatedInclusions.push("- Wedding: Sacred pheras coverage, emotional Bidai record, 10-min Color-Graded Cinema Film.");
+      }
+
+      consolidatedInclusions.push(`- Camera squad custom scaled to cover ${days} full days of schedules.`);
+      consolidatedInclusions.push("- Complete high-resolution master processed deliveries via secured digital folders.");
+
+      if (days >= 3) {
+        consolidatedInclusions.push("- Premium physical leather-bound lay-flat custom printed legacy visual album.");
+      } else {
+        consolidatedInclusions.push("- Premium lay-flat visual canvas print custom layouts.");
+      }
+
+      consolidatedInclusions.forEach(inc => {
+        doc.text(inc, 20, inclusionY);
+        inclusionY += 6;
+      });
+
+      // Special Message Section
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(11);
+      doc.setTextColor(goldColor[0], goldColor[1], goldColor[2]);
+      doc.text("Special Requirements / Messages Captured", 20, inclusionY + 8);
+
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(9);
+      doc.setTextColor(darkColor[0], darkColor[1], darkColor[2]);
+      
+      // Handle multi-line message wrapping
+      const wrappedMessage = doc.splitTextToSize(message, 170);
+      doc.text(wrappedMessage, 20, inclusionY + 14);
+
+      // Brand Footer Section
+      doc.setFillColor(darkColor[0], darkColor[1], darkColor[2]);
+      doc.rect(0, 275, 210, 22, "F");
+
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(10);
+      doc.setTextColor(goldColor[0], goldColor[1], goldColor[2]);
+      doc.text("VYUHA CREATION - CRAFTING DIGITAL VISUAL LEGACIES", 20, 285);
+
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(7);
+      doc.setTextColor(150, 150, 150);
+      doc.text("Sadashivpet, Medak, Telangana 502291 | Booking Hotline: +91 96400 50176", 20, 290);
+
+      // Download PDF
+      doc.save(`Vyuha_Custom_Package_${name.replace(/\s+/g, '_')}.pdf`);
+    }
+  </script>
+
+</body>
+</html>
