@@ -169,7 +169,7 @@ function initWhatsAppPreFill() {
         baseMsg = `Hello Vyuha Creation, my name is ${name}. I am highly interested in booking your "${serviceType}" service. Could you please share details?`;
       }
       
-      const whatsappUrl = `https://wa.me/919876543210?text=${encodeURIComponent(baseMsg)}`;
+      const whatsappUrl = `https://wa.me/919640050176?text=${encodeURIComponent(baseMsg)}`;
       btn.setAttribute('href', whatsappUrl);
     });
   });
