@@ -14,6 +14,148 @@
   
   <!-- Master Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    /* Premium Page-Specific Styling & Typography Overrides */
+    h1, h2, h3, h4, h5, h6, .btn, .filter-btn, .mobile-nav a, .nav-links a, .form-group label, .item-tag {
+      text-transform: none !important;
+    }
+
+    /* List items adjustment with remove button */
+    .detail-inclusions-list li, .summary-details-list li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.015);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      padding: 12px 18px;
+      border-radius: var(--border-radius-md);
+      margin-bottom: 10px;
+      transition: var(--transition-fast);
+    }
+    
+    .detail-inclusions-list li:hover, .summary-details-list li:hover {
+      background: rgba(255, 255, 255, 0.03);
+      border-color: rgba(244, 160, 0, 0.2);
+      box-shadow: var(--gold-border-glow);
+    }
+
+    .inclusion-left-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-grow: 1;
+    }
+
+    .inclusion-left-wrap i {
+      color: var(--color-gold);
+      font-size: 0.95rem;
+    }
+
+    .inclusion-left-wrap span {
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+      line-height: 1.4;
+    }
+
+    .remove-inclusion-btn {
+      background: none;
+      border: none;
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 1.3rem;
+      cursor: pointer;
+      padding: 4px 8px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-fast);
+      border-radius: 50%;
+    }
+
+    .remove-inclusion-btn:hover {
+      color: #ff4d4d;
+      transform: scale(1.15);
+      background: rgba(255, 77, 77, 0.08);
+      text-shadow: 0 0 8px rgba(255, 77, 77, 0.4);
+    }
+
+    /* Radio button Date Status style */
+    .date-status-group {
+      display: flex;
+      gap: 24px;
+      margin-top: 5px;
+      margin-bottom: 18px;
+    }
+    
+    .date-status-option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      font-weight: 500 !important;
+    }
+    
+    .date-status-option input[type="radio"] {
+      accent-color: var(--color-gold);
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    /* Dynamic Add Inclusion Sub-modal Panel */
+    .sub-modal-panel {
+      display: none;
+      background: rgba(18, 18, 18, 0.98);
+      backdrop-filter: blur(25px);
+      border: 1px solid rgba(244, 160, 0, 0.2);
+      border-radius: var(--border-radius-lg);
+      padding: 35px;
+      margin-top: 30px;
+      box-shadow: var(--gold-border-glow), 0 10px 40px rgba(0, 0, 0, 0.6);
+      animation: slideDownFade 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
+    @keyframes slideDownFade {
+      from { opacity: 0; transform: translateY(-15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Event Summary Card Display Grid */
+    .summary-cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      margin-top: 25px;
+    }
+
+    .event-summary-card {
+      background: rgba(255, 255, 255, 0.015);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: var(--border-radius-md);
+      padding: 25px 30px;
+      transition: var(--transition-smooth);
+    }
+    
+    .event-summary-card:hover {
+      border-color: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.025);
+    }
+    
+    .event-summary-card h5 {
+      font-family: var(--font-serif-brand);
+      color: var(--color-gold);
+      font-size: 1.25rem;
+      margin-bottom: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  </style>
 </head>
 <body>
 
@@ -106,14 +248,14 @@
             <button class="btn btn-secondary explore-details-btn" data-event="mehndi" style="width: 100%;">Explore</button>
           </div>
 
-          <!-- Card 3: Sangeeth -->
+          <!-- Card 3: Sangeet -->
           <div class="wedding-category-card">
             <div>
               <div class="service-icon-wrap" style="margin: 0 auto 20px auto;"><i class="fa-solid fa-guitar"></i></div>
-              <h3>Sangeeth</h3>
+              <h3>Sangeet</h3>
               <p>High-energy stage performances, music-synced transitions, crowd light shows, artist performance captures, and cinematic slow-motion glances.</p>
             </div>
-            <button class="btn btn-secondary explore-details-btn" data-event="sangeeth" style="width: 100%;">Explore</button>
+            <button class="btn btn-secondary explore-details-btn" data-event="sangeet" style="width: 100%;">Explore</button>
           </div>
 
           <!-- Card 4: Reception -->
@@ -233,10 +375,10 @@
               <h4>Add Mehndi</h4>
             </div>
 
-            <div class="event-toggle-card" data-event-type="Sangeeth">
+            <div class="event-toggle-card" data-event-type="Sangeet">
               <i class="fa-solid fa-circle-check checkbox-icon"></i>
               <div style="font-size: 2rem; color: var(--color-gold);"><i class="fa-solid fa-guitar"></i></div>
-              <h4>Add Sangeeth</h4>
+              <h4>Add Sangeet</h4>
             </div>
 
             <div class="event-toggle-card" data-event-type="Reception">
@@ -264,14 +406,40 @@
           <p style="text-align: center; max-width: 500px; margin: 0 auto 30px auto; font-size: 0.95rem;">Review your custom schedule structure and deliverables summary below before locking.</p>
 
           <div class="wizard-summary-wrapper">
-            <h4 style="color: var(--color-gold); font-size: 1.2rem; font-family: var(--font-serif-brand); margin-bottom: 15px;">Summary Matrix</h4>
+            <h4 style="color: var(--color-gold); font-size: 1.25rem; font-family: var(--font-serif-brand); margin-bottom: 15px;">Summary Matrix</h4>
             <p style="font-size: 1rem; color: var(--color-text-primary); margin-bottom: 10px;"><strong>Celebration Length:</strong> <span id="summary-days-count" style="color: var(--color-gold);">1 Day</span></p>
             <p style="font-size: 1rem; color: var(--color-text-primary); margin-bottom: 20px;"><strong>Selected Events:</strong> <span id="summary-events-list" style="color: var(--color-gold);">Wedding</span></p>
             
-            <h4 style="color: var(--color-gold); font-size: 1.1rem; margin-top: 25px; margin-bottom: 10px;">Bespoke Inclusions & Deliverables:</h4>
-            <ul class="summary-details-list" id="summary-inclusions-checklist">
-              <!-- Dynamically mapped -->
-            </ul>
+            <h4 style="color: var(--color-gold); font-size: 1.15rem; margin-top: 25px; margin-bottom: 10px; font-family: var(--font-serif-brand);">Bespoke Event Inclusions & Deliverables:</h4>
+            
+            <!-- Event-by-event summary cards will be dynamically rendered here -->
+            <div id="summary-event-inclusions-container" class="summary-cards-container"></div>
+
+            <button type="button" class="btn btn-secondary" id="add-inclusion-trigger-btn" style="margin-top: 25px; padding: 10px 20px; font-size: 0.8rem;"><i class="fa-solid fa-plus" style="margin-right: 8px;"></i> Add Inclusion</button>
+
+            <!-- Dynamic Add Inclusion Sub-modal Panel -->
+            <div class="sub-modal-panel" id="add-inclusion-panel">
+              <h4 style="color: var(--color-gold); font-size: 1.1rem; margin-bottom: 15px; font-family: var(--font-serif-brand);">Add Custom Inclusion</h4>
+              
+              <div class="form-group">
+                <label for="add-inclusion-select">Select Inclusion Item</label>
+                <select id="add-inclusion-select" class="form-control" style="background-color: #121212;">
+                  <!-- Dynamically populated from global list -->
+                </select>
+              </div>
+              
+              <div class="form-group" style="margin-top: 15px;">
+                <label style="margin-bottom: 8px; display: block;">Assign to Event Day(s)</label>
+                <div id="add-inclusion-events-checkboxes" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-top: 5px;">
+                  <!-- Dynamic checkboxes populated based on current selected events -->
+                </div>
+              </div>
+              
+              <div style="display: flex; gap: 15px; margin-top: 25px;">
+                <button type="button" class="btn btn-primary" id="confirm-add-inclusion-btn" style="padding: 10px 20px; font-size: 0.8rem;">Add to Package</button>
+                <button type="button" class="btn btn-secondary" id="cancel-add-inclusion-btn" style="padding: 10px 20px; font-size: 0.8rem;">Cancel</button>
+              </div>
+            </div>
           </div>
 
           <div style="margin-top: 40px; display: flex; justify-content: space-between;">
@@ -301,6 +469,7 @@
         <!-- Hidden/ReadOnly fields for customizer data -->
         <input type="hidden" id="form-days-count" name="days_count" value="1">
         <input type="hidden" id="form-events-list" name="events_list" value="Wedding">
+        <input type="hidden" id="form-inclusions-list" name="inclusions_list" value="">
         
         <div class="form-group">
           <label for="customer-name">Full Name *</label>
@@ -318,15 +487,32 @@
         </div>
 
         <div class="form-group">
+          <label style="margin-bottom: 5px; display: block;">Date Status *</label>
+          <div class="date-status-group">
+            <label class="date-status-option">
+              <input type="radio" name="date_status" value="fixed" checked id="status-fixed">
+              Date Fixed
+            </label>
+            <label class="date-status-option">
+              <input type="radio" name="date_status" value="not_fixed" id="status-not-fixed">
+              Date Not Fixed Yet
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group" id="date-picker-wrapper">
           <label for="event-date">Tentative Celebration Date *</label>
           <input type="date" id="event-date" class="form-control" required>
         </div>
 
         <div class="form-group">
           <label>Selected Schedule Summary</label>
-          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--border-radius-md); padding: 15px; font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.5;">
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--border-radius-md); padding: 20px; font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.5; max-height: 250px; overflow-y: auto;">
             <p><strong>Duration Selected:</strong> <span id="modal-summary-days" style="color: var(--color-gold);">1 Day</span></p>
             <p style="margin-top: 5px;"><strong>Events Chosen:</strong> <span id="modal-summary-events" style="color: var(--color-gold);">Wedding</span></p>
+            <div id="modal-summary-inclusions-list" style="margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 10px;">
+              <!-- Dynamic Event Inclusions will be listed here -->
+            </div>
           </div>
         </div>
 
@@ -419,10 +605,73 @@
   
   <script>
     // ==========================================
-    // WEDDING FLOW INTERACTIVE MECHANICS
+    // WEDDING FLOW STATE & DATA MODELS
     // ==========================================
     
-    // Inclusions data maps
+    // Global list of all available inclusions from across the studio
+    const globalInclusionsList = [
+      "Traditional Photography",
+      "Traditional Videography",
+      "Candid Photography",
+      "Cinematic Videography",
+      "Drone Coverage",
+      "Instant Reels",
+      "LED Screen Coverage",
+      "YouTube Live Streaming",
+      "Album Design",
+      "Same-Day Edit",
+      "Highlight Film"
+    ];
+
+    // Core default inclusions for each ceremony type
+    const defaultInclusions = {
+      Haldi: [
+        "Traditional Photography",
+        "Traditional Videography",
+        "Candid Photography",
+        "Cinematic Videography"
+      ],
+      Mehndi: [
+        "Traditional Photography",
+        "Traditional Videography",
+        "Candid Photography",
+        "Cinematic Videography"
+      ],
+      Sangeet: [
+        "Traditional Photography",
+        "Traditional Videography",
+        "Candid Photography",
+        "Cinematic Videography"
+      ],
+      Reception: [
+        "Traditional Photography",
+        "Traditional Videography",
+        "Candid Photography",
+        "Cinematic Videography",
+        "Drone Coverage",
+        "LED Screen Coverage",
+        "YouTube Live Streaming"
+      ],
+      Wedding: [
+        "Traditional Photography",
+        "Traditional Videography",
+        "Candid Photography",
+        "Cinematic Videography",
+        "Drone Coverage",
+        "LED Screen Coverage",
+        "YouTube Live Streaming",
+        "Album Design"
+      ]
+    };
+
+    // Keep dynamic state of active user selections
+    let userInclusions = JSON.parse(JSON.stringify(defaultInclusions));
+    
+    const state = {
+      activeDetailEvent: null // "Haldi", "Mehndi", "Sangeet", "Reception", "Wedding"
+    };
+
+    // static parameters mapping
     const eventDetails = {
       haldi: {
         title: "Haldi Ceremony Inclusions",
@@ -433,12 +682,7 @@
         reels: "Included",
         drone: "Not Included in basic setup",
         album: "Full access to secured digital cloud gallery, print-ready high-res files.",
-        inclusions: [
-          "Traditional Photography: Covers all traditional shots, customs and family groups.",
-          "Traditional Videography: Covers full length event procedures and rituals.",
-          "Candid Photography: Captures natural emotions, micro-expressions and fun smear frames.",
-          "Cinematic Videography: High-end color-graded cinematic slow-motion captures."
-        ]
+        key: "Haldi"
       },
       mehndi: {
         title: "Mehndi Ceremony Inclusions",
@@ -449,15 +693,10 @@
         reels: "Included",
         drone: "Not Included in basic setup",
         album: "Secure cloud portal private download link.",
-        inclusions: [
-          "Traditional Photography: Full coverage of all family rituals and posing segments.",
-          "Traditional Videography: Complete video coverage of Mehndi celebration processes.",
-          "Candid Photography: Captures warm, natural family interactions and genuine laughter.",
-          "Cinematic Videography: Cinematic, LUT-graded visual edits of henna processes."
-        ]
+        key: "Mehndi"
       },
-      sangeeth: {
-        title: "Sangeeth Night Inclusions",
+      sangeet: {
+        title: "Sangeet Night Inclusions",
         iconClass: "fa-guitar",
         crew: "Traditional Photography, Traditional Videography, Candid Photography, Cinematic Videography",
         photo: "Concert action freeze, high-energy dancing captures, light sweeps.",
@@ -465,46 +704,29 @@
         reels: "Included",
         drone: "Not Included in basic setup",
         album: "Secure private high-resolution cloud storage link.",
-        inclusions: [
-          "Traditional Photography: Capturing family group arrangements and stage arrivals.",
-          "Traditional Videography: Full-length stage performance video capture.",
-          "Candid Photography: Captures energetic, natural expressions, and backstage fun.",
-          "Cinematic Videography: Cinematic LUT-graded music-synced stage cuts."
-        ]
+        key: "Sangeet"
       },
       reception: {
         title: "Grand Reception Inclusions",
         iconClass: "fa-champagne-glasses",
-        crew: "Traditional Photography, Traditional Videography, Candid Photography, Cinematic Videography, Drone, LED Screen, Youtube Live Streaming",
+        crew: "Traditional Photography, Traditional Videography, Candid Photography, Cinematic Videography, Drone, LED Screen, YouTube Live Streaming",
         photo: "Stage guest lines capture, couples designer portraits, family visual logs.",
         video: "Stage entry sweeps, full guest blessing records, high-res drone captures, YouTube live feed.",
         reels: "Included",
         drone: "Included (Full mandatory Drone coverage)",
         album: "Full visual deliverables delivered via private cloud folder link.",
-        inclusions: [
-          "Traditional Photography & Videography: Complete stage ceremony and guest arrival coverage.",
-          "Candid Photography & Cinematic Videography: Premium artistic slow-motion couples frames.",
-          "Drone: Aerial cinematography of reception entrance, staging grandeur, and outdoor sweeps.",
-          "LED Screen: Large dual staging display screens representing live close-ups.",
-          "YouTube Live Streaming: Instant private live broadcast streaming links for global friends."
-        ]
+        key: "Reception"
       },
       wedding: {
         title: "Grand Wedding Day Inclusions",
         iconClass: "fa-hands-holding",
-        crew: "Traditional Photography, Traditional Videography, Candid Photography, Cinematic Videography, Drone, LED Screen, Youtube Live Streaming",
+        crew: "Traditional Photography, Traditional Videography, Candid Photography, Cinematic Videography, Drone, LED Screen, YouTube Live Streaming",
         photo: "Intricate pheras, sacred mandap details, bidai raw emotions, visual legends.",
         video: "Full ritual multicam, drone sequences, YouTube live broadcasting, cinema movie.",
         reels: "Included",
         drone: "Included (Mandatory Drone aerial sequences)",
         album: "Premium Leather Lay-Flat Printed visual legacy album included.",
-        inclusions: [
-          "Traditional Photography & Videography: Complete, high-definition captures of pheras and mandap rituals.",
-          "Candid Photography & Cinematic Videography: Deep emotional expressions, bidai details, cinema trailer.",
-          "Drone: Advanced aerial sweeps of venue, processional arrivals, and mandap installations.",
-          "LED Screen: Live onstage screen relays for clean close-up display sweeps.",
-          "YouTube Live Streaming: Private high-definition live stream broadcast links for remote family."
-        ]
+        key: "Wedding"
       }
     };
 
@@ -512,7 +734,7 @@
     const categoriesSection = document.getElementById('categories-grid-section');
     const detailSection = document.getElementById('event-detail-section');
     const customizerSection = document.getElementById('customizer-wizard-section');
-    const inquiryModal = document.getElementById('inquiry-modal-overlay');
+    const modalOverlay = document.getElementById('inquiry-modal-overlay');
     
     // Back to Grid
     document.getElementById('back-to-grid-btn').addEventListener('click', () => {
@@ -521,7 +743,7 @@
       window.scrollTo({ top: categoriesSection.offsetTop - 100, behavior: 'smooth' });
     });
 
-    // Explore Buttons
+    // Explore Buttons in Grid
     document.querySelectorAll('.explore-details-btn').forEach(button => {
       button.addEventListener('click', (e) => {
         const eventName = e.target.getAttribute('data-event');
@@ -529,13 +751,15 @@
       });
     });
 
+    // Populate and render details for a single ceremony
     function populateEventDetails(eventKey) {
+      state.activeDetailEvent = eventKey;
       const data = eventDetails[eventKey];
       if (!data) return;
 
       document.getElementById('detail-title').textContent = data.title;
       
-      // Icon
+      // Icon display
       const iconWrap = document.getElementById('detail-icon');
       iconWrap.innerHTML = `<i class="fa-solid ${data.iconClass}"></i>`;
 
@@ -547,16 +771,12 @@
       document.getElementById('meta-drone').textContent = data.drone;
       document.getElementById('meta-album').textContent = data.album;
 
-      // Inclusions list
-      const listContainer = document.getElementById('detail-inclusions');
-      listContainer.innerHTML = '';
-      data.inclusions.forEach(inc => {
-        listContainer.innerHTML += `<li><i class="fa-solid fa-circle-check"></i> <span>${inc}</span></li>`;
-      });
+      // Render inclusions checklist dynamically
+      renderDetailInclusions();
 
       // Quick Booking Service Title setting
       const bookBtn = document.getElementById('detail-book-btn');
-      bookBtn.setAttribute('data-service', `Wedding - ${eventKey.toUpperCase()}`);
+      bookBtn.setAttribute('data-service', `Wedding - ${data.key}`);
       
       // Toggle views
       categoriesSection.style.display = 'none';
@@ -564,8 +784,67 @@
       window.scrollTo({ top: detailSection.offsetTop - 120, behavior: 'smooth' });
     }
 
+    function renderDetailInclusions() {
+      const eventKey = state.activeDetailEvent;
+      const data = eventDetails[eventKey];
+      if (!data) return;
+
+      const listContainer = document.getElementById('detail-inclusions');
+      listContainer.innerHTML = '';
+
+      const list = userInclusions[data.key] || [];
+      if (list.length === 0) {
+        listContainer.innerHTML = `<li style="justify-content: center; color: var(--color-text-dark); background: transparent; border: none;">No inclusions selected for this ceremony. Please add custom items.</li>`;
+        return;
+      }
+
+      list.forEach(inc => {
+        listContainer.innerHTML += `
+          <li>
+            <div class="inclusion-left-wrap">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>${inc}</span>
+            </div>
+            <button type="button" class="remove-inclusion-btn" title="Remove Inclusion" onclick="removeDetailInclusion('${data.key}', '${inc}')">&times;</button>
+          </li>
+        `;
+      });
+    }
+
+    // Global listener to let users remove items dynamically in the UI
+    window.removeDetailInclusion = function(eventKey, inc) {
+      userInclusions[eventKey] = userInclusions[eventKey].filter(item => item !== inc);
+      renderDetailInclusions();
+    };
+
+    // Book This Event quick direct popup in detail view
+    document.getElementById('detail-book-btn').addEventListener('click', (e) => {
+      const eventKey = state.activeDetailEvent;
+      const data = eventDetails[eventKey];
+      if (!data) return;
+
+      const eventTitle = data.key;
+      
+      // Set temporary state parameters for form prefill
+      customDays = 1;
+      selectedEvents = [eventTitle];
+
+      document.getElementById('form-days-count').value = 1;
+      document.getElementById('form-events-list').value = eventTitle;
+      
+      document.getElementById('modal-summary-days').textContent = "1 Day";
+      document.getElementById('modal-summary-events').textContent = eventTitle;
+
+      // Populate inclusions in the modal pre-fill summary list
+      renderModalInclusionsSummary();
+
+      modalOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+
+
     // ==========================================
-    // PACKAGE CUSTOMIZER MECHANICS
+    // PACKAGE CUSTOMIZER STEPS INTERACTIVITY
     // ==========================================
     let customDays = 1;
     let selectedEvents = ['Wedding'];
@@ -588,11 +867,11 @@
     function resetCustomizer() {
       customDays = 1;
       selectedEvents = ['Wedding'];
+      userInclusions = JSON.parse(JSON.stringify(defaultInclusions)); // restore defaults
       
-      // Reset Step active views
       switchStep(1);
       
-      // Reset cards active states
+      // Reset active displays
       document.querySelectorAll('.day-select-card').forEach(card => {
         card.classList.remove('active');
         if(card.getAttribute('data-days') === '1') card.classList.add('active');
@@ -602,19 +881,19 @@
         card.classList.remove('active');
         if(card.getAttribute('data-event-type') === 'Wedding') card.classList.add('active');
       });
+      
+      document.getElementById('add-inclusion-panel').style.display = 'none';
     }
 
     function switchStep(stepNum) {
-      // Hide all content
       document.querySelectorAll('.wizard-step-content').forEach(c => c.classList.remove('active'));
       document.querySelectorAll('.wizard-step-dot').forEach(d => d.classList.remove('active'));
 
-      // Show target
       document.getElementById(`step-${stepNum}-content`).classList.add('active');
       document.getElementById(`dot-step-${stepNum}`).classList.add('active');
     }
 
-    // Day Selection Actions
+    // Step 1: Day Selection
     document.querySelectorAll('.day-select-card').forEach(card => {
       card.addEventListener('click', (e) => {
         document.querySelectorAll('.day-select-card').forEach(c => c.classList.remove('active'));
@@ -623,15 +902,14 @@
       });
     });
 
-    // Event Selection Actions
+    // Step 2: Events Selection
     document.querySelectorAll('.event-toggle-card').forEach(card => {
       card.addEventListener('click', (e) => {
         const toggleCard = e.currentTarget;
         const eventType = toggleCard.getAttribute('data-event-type');
 
         if (toggleCard.classList.contains('active')) {
-          // Cannot remove Wedding if it's the only one left
-          if (eventType === 'Wedding' && selectedEvents.length === 1) return;
+          if (eventType === 'Wedding' && selectedEvents.length === 1) return; // Must select at least one
           
           toggleCard.classList.remove('active');
           selectedEvents = selectedEvents.filter(ev => ev !== eventType);
@@ -644,126 +922,258 @@
       });
     });
 
-    // Step 1 Navigation
+    // Step 1 -> Step 2
     document.getElementById('next-to-step-2-btn').addEventListener('click', () => {
       switchStep(2);
     });
 
-    // Step 2 Navigation
+    // Step 2 -> Step 1
     document.getElementById('back-to-step-1-btn').addEventListener('click', () => {
       switchStep(1);
     });
     
+    // Step 2 -> Step 3
     document.getElementById('next-to-step-3-btn').addEventListener('click', () => {
-      compileSummary();
+      renderCustomizerSummary();
       switchStep(3);
     });
 
-    // Step 3 Navigation
+    // Step 3 -> Step 2
     document.getElementById('back-to-step-2-btn').addEventListener('click', () => {
       switchStep(2);
     });
 
-    function compileSummary() {
+    // Render Event-by-Event summary with deletion options
+    function renderCustomizerSummary() {
       document.getElementById('summary-days-count').textContent = `${customDays} Day${customDays > 1 ? 's' : ''}`;
       document.getElementById('summary-events-list').textContent = selectedEvents.join(', ');
-      
-      const checklistContainer = document.getElementById('summary-inclusions-checklist');
-      checklistContainer.innerHTML = '';
 
-      // Determine general inclusions list based on selected functions
-      let consolidatedInclusions = [];
-      
-      if (selectedEvents.includes('Haldi')) {
-        consolidatedInclusions.push("Haldi: Traditional Photography, Traditional Videography, Candid Photography, Cinematic Videography.");
-      }
-      if (selectedEvents.includes('Mehndi')) {
-        consolidatedInclusions.push("Mehndi: Traditional Photography, Traditional Videography, Candid Photography, Cinematic Videography.");
-      }
-      if (selectedEvents.includes('Sangeeth')) {
-        consolidatedInclusions.push("Sangeeth: Traditional Photography, Traditional Videography, Candid Photography, Cinematic Videography.");
-      }
-      if (selectedEvents.includes('Reception')) {
-        consolidatedInclusions.push("Reception: Traditional Photography, Traditional Videography, Candid Photography, Cinematic Videography, Drone, LED Screen, Youtube Live Streaming.");
-      }
-      if (selectedEvents.includes('Wedding')) {
-        consolidatedInclusions.push("Wedding: Traditional Photography, Traditional Videography, Candid Photography, Cinematic Videography, Drone, LED Screen, Youtube Live Streaming.");
-      }
+      const summaryCardsContainer = document.getElementById('summary-event-inclusions-container');
+      summaryCardsContainer.innerHTML = '';
 
-      // Add general duration inclusions
-      consolidatedInclusions.push(`High-End Camera squad scale matched to capture over ${customDays} full celebration days.`);
-      consolidatedInclusions.push("Uncapped high-resolution digital master processed deliveries via private cloud folders.");
-      
-      if (customDays >= 3) {
-        consolidatedInclusions.push("Premium Lay-Flat Leather Printed Custom visual legacy album included!");
-      } else {
-        consolidatedInclusions.push("Premium layout print canvas options included.");
-      }
-
-      consolidatedInclusions.forEach(item => {
-        checklistContainer.innerHTML += `<li><i class="fa-solid fa-circle-check" style="color: var(--color-gold); margin-right: 10px;"></i> ${item}</li>`;
+      selectedEvents.forEach(ev => {
+        const card = document.createElement('div');
+        card.className = 'event-summary-card';
+        
+        const iconMap = {
+          Haldi: "fa-sun",
+          Mehndi: "fa-feather",
+          Sangeet: "fa-guitar",
+          Reception: "fa-champagne-glasses",
+          Wedding: "fa-hands-holding"
+        };
+        const icon = iconMap[ev] || "fa-calendar";
+        
+        card.innerHTML = `
+          <h5><i class="fa-solid ${icon}"></i> ${ev} Ceremony Inclusions</h5>
+          <ul class="summary-details-list">
+            ${(userInclusions[ev] || []).length === 0 
+              ? `<li style="justify-content: center; color: var(--color-text-dark); background: transparent; border: none;">No inclusions selected for this ceremony.</li>`
+              : userInclusions[ev].map(inc => `
+                  <li>
+                    <div class="inclusion-left-wrap">
+                      <i class="fa-solid fa-circle-check"></i>
+                      <span>${inc}</span>
+                    </div>
+                    <button type="button" class="remove-inclusion-btn" title="Remove Inclusion" onclick="removeCustomizerInclusion('${ev}', '${inc}')">&times;</button>
+                  </li>
+                `).join('')
+            }
+          </ul>
+        `;
+        summaryCardsContainer.appendChild(card);
       });
     }
 
+    window.removeCustomizerInclusion = function(eventKey, inc) {
+      userInclusions[eventKey] = userInclusions[eventKey].filter(item => item !== inc);
+      renderCustomizerSummary();
+    };
+
     // ==========================================
-    // POPUP MODAL & FORM MECHANICAL LOGIC
+    // GLOBAL INCLUSION MANAGEMENT (ADD / ASSIGN)
     // ==========================================
-    const modalOverlay = document.getElementById('inquiry-modal-overlay');
-    
+    const addIncPanel = document.getElementById('add-inclusion-panel');
+    const addIncSelect = document.getElementById('add-inclusion-select');
+    const addIncCBsContainer = document.getElementById('add-inclusion-events-checkboxes');
+
+    document.getElementById('add-inclusion-trigger-btn').addEventListener('click', () => {
+      // Populate select items
+      addIncSelect.innerHTML = globalInclusionsList.map(item => `<option value="${item}">${item}</option>`).join('');
+      
+      // Populate checkboxes for days
+      addIncCBsContainer.innerHTML = selectedEvents.map(ev => `
+        <label class="date-status-option">
+          <input type="checkbox" class="add-inc-event-cb" value="${ev}" checked>
+          ${ev}
+        </label>
+      `).join('');
+
+      addIncPanel.style.display = 'block';
+      window.scrollTo({ top: addIncPanel.offsetTop - 120, behavior: 'smooth' });
+    });
+
+    document.getElementById('cancel-add-inclusion-btn').addEventListener('click', () => {
+      addIncPanel.style.display = 'none';
+    });
+
+    document.getElementById('confirm-add-inclusion-btn').addEventListener('click', () => {
+      const selectedInc = addIncSelect.value;
+      const checkedCBs = document.querySelectorAll('.add-inc-event-cb:checked');
+      
+      if (checkedCBs.length === 0) {
+        alert("Please select at least one ceremony to assign this inclusion to.");
+        return;
+      }
+
+      checkedCBs.forEach(cb => {
+        const eventKey = cb.value;
+        if (!userInclusions[eventKey].includes(selectedInc)) {
+          userInclusions[eventKey].push(selectedInc);
+        }
+      });
+
+      addIncPanel.style.display = 'none';
+      renderCustomizerSummary();
+    });
+
+
+    // ==========================================
+    // DATE STATUS RADIO TRIGGER CONTROLLER
+    // ==========================================
+    const statusFixed = document.getElementById('status-fixed');
+    const statusNotFixed = document.getElementById('status-not-fixed');
+    const datePickerWrapper = document.getElementById('date-picker-wrapper');
+    const datePickerInput = document.getElementById('event-date');
+
+    function updateDatePickerState() {
+      if (statusFixed.checked) {
+        datePickerWrapper.style.display = 'block';
+        datePickerInput.setAttribute('required', 'required');
+      } else {
+        datePickerWrapper.style.display = 'none';
+        datePickerInput.removeAttribute('required');
+        datePickerInput.value = ''; // empty value
+      }
+    }
+
+    statusFixed.addEventListener('change', updateDatePickerState);
+    statusNotFixed.addEventListener('change', updateDatePickerState);
+    updateDatePickerState(); // run immediately to initialize
+
+
+    // ==========================================
+    // POPUP MODAL ENQUIRY PRE-FILLING
+    // ==========================================
+    function renderModalInclusionsSummary() {
+      const listContainer = document.getElementById('modal-summary-inclusions-list');
+      listContainer.innerHTML = '';
+
+      let html = `<p style="margin-top: 10px; margin-bottom: 8px; font-weight: bold; color: var(--color-text-primary);">Selected Inclusions Checklist:</p>`;
+
+      selectedEvents.forEach(ev => {
+        html += `<div style="margin-bottom: 10px;">
+          <p style="color: var(--color-gold); font-weight: bold; margin-bottom: 4px;">${ev} Inclusions:</p>
+          <ul style="list-style: none; padding-left: 10px;">`;
+        
+        const list = userInclusions[ev] || [];
+        if (list.length === 0) {
+          html += `<li style="color: var(--color-text-dark); font-size: 0.85rem;">- No inclusions selected</li>`;
+        } else {
+          list.forEach(inc => {
+            html += `<li style="font-size: 0.85rem; margin-bottom: 3px;"><i class="fa-solid fa-check" style="color: var(--color-gold); margin-right: 5px;"></i> ${inc}</li>`;
+          });
+        }
+        
+        html += `</ul></div>`;
+      });
+
+      listContainer.innerHTML = html;
+      
+      // Also update hidden field for package summaries
+      let inclusionsFlatStr = "";
+      selectedEvents.forEach(ev => {
+        inclusionsFlatStr += `${ev}: ${(userInclusions[ev] || []).join(', ')}; `;
+      });
+      document.getElementById('form-inclusions-list').value = inclusionsFlatStr;
+    }
+
     document.getElementById('show-price-btn').addEventListener('click', () => {
-      // Pre-fill hidden inputs and read-only text in modal
       document.getElementById('form-days-count').value = customDays;
       document.getElementById('form-events-list').value = selectedEvents.join(', ');
       
       document.getElementById('modal-summary-days').textContent = `${customDays} Day${customDays > 1 ? 's' : ''}`;
       document.getElementById('modal-summary-events').textContent = selectedEvents.join(', ');
 
+      renderModalInclusionsSummary();
+
       modalOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
     });
 
     document.getElementById('close-modal-btn').addEventListener('click', closeModal);
     
-    // Close modal if clicking overlay background
     modalOverlay.addEventListener('click', (e) => {
       if (e.target === modalOverlay) closeModal();
     });
 
     function closeModal() {
       modalOverlay.classList.remove('active');
+      document.body.style.overflow = '';
     }
 
-    // Book This Event quick direct link setting
-    document.getElementById('detail-book-btn').addEventListener('click', (e) => {
-      const selectedService = e.target.getAttribute('data-service');
-      window.location.href = `contact.html?service=${encodeURIComponent(selectedService)}`;
-    });
 
     // ==========================================
-    // FORM SUBMISSION & jsPDF COMPILER ENGINE
+    // FORM SUBMISSION & jsPDF COMPILER proposal
     // ==========================================
     document.getElementById('inquiry-form').addEventListener('submit', (e) => {
       e.preventDefault();
 
-      // Collect data
+      // Collect inputs
       const name = document.getElementById('customer-name').value;
       const phone = document.getElementById('customer-phone').value;
       const email = document.getElementById('customer-email').value || "Not provided";
-      const date = document.getElementById('event-date').value;
+      
+      const dateStatus = document.querySelector('input[name="date_status"]:checked').value;
+      let dateValue = "Not Finalized Yet";
+      if (dateStatus === 'fixed') {
+        dateValue = document.getElementById('event-date').value;
+        if (!dateValue) {
+          document.getElementById('event-date').style.borderColor = '#ff4d4d';
+          return;
+        }
+      }
+
       const message = document.getElementById('customer-message').value || "No special requests.";
 
-      // Success modal feedback
-      alert(`Thank you, ${name}! Your inquiry has been logged successfully.\nOur admin has received your details.\n\nPress OK to download your customized package PDF brochure instantly.`);
+      alert(`Thank you, ${name}! Your inquiry has been logged successfully.\nOur coordination crew has received your customized details.\n\nPress OK to download your Bespoke Wedding Proposal PDF brochure instantly.`);
+      
+      // WhatsApp message template construction
+      let inclusionsSummaryStr = "";
+      selectedEvents.forEach(ev => {
+        inclusionsSummaryStr += `\n*${ev}*: ${(userInclusions[ev] || []).join(', ')}`;
+      });
+      
+      const whatsAppMsg = `Hello Vyuha Creation, my name is ${name}. I've customized a bespoke package proposal:\n\n- *Duration*: ${customDays} Day${customDays > 1 ? 's' : ''}\n- *Events Chosen*: ${selectedEvents.join(', ')}\n- *Date Status*: ${dateStatus === 'fixed' ? dateValue : 'Date Not Fixed Yet'}\n- *Inclusions Chosen*:${inclusionsSummaryStr}\n\n*Additional Requests*: "${message}"`;
+      
+      const waLink = `https://wa.me/919640050176?text=${encodeURIComponent(whatsAppMsg)}`;
       
       // Trigger jsPDF dynamic compiler
-      generatePDF(name, phone, email, date, customDays, selectedEvents, message);
+      generatePDF(name, phone, email, dateStatus, dateValue, customDays, selectedEvents, userInclusions, message);
       
       closeModal();
       
       // Reset form
       document.getElementById('inquiry-form').reset();
+      updateDatePickerState();
+
+      // Open WhatsApp direct link in new tab
+      setTimeout(() => {
+        window.open(waLink, '_blank');
+      }, 1000);
     });
 
-    function generatePDF(name, phone, email, date, days, events, message) {
+    function generatePDF(name, phone, email, dateStatus, dateValue, days, events, selectedInclusions, message) {
       const { jsPDF } = window.jspdf;
       const doc = new jsPDF({
         orientation: "portrait",
@@ -771,23 +1181,23 @@
         format: "a4"
       });
 
-      // Styling parameters
+      // Colors styling
       const goldColor = [244, 160, 0];
       const darkColor = [18, 18, 18];
       const lightGray = [120, 120, 120];
 
-      // Page Background
+      // Page background
       doc.setFillColor(250, 250, 250);
       doc.rect(0, 0, 210, 297, "F");
 
-      // Branded Top Header Background
+      // Header block
       doc.setFillColor(darkColor[0], darkColor[1], darkColor[2]);
       doc.rect(0, 0, 210, 45, "F");
 
       // Brand Logo / Header Text
       doc.setFont("helvetica", "bold");
       doc.setFontSize(22);
-      doc.setTextColor(goldColor[0], goldColor[1], goldColor[2]);
+      doc.setTextColor(goldColor[0], goldColor[1], goldColor[GoldIndex = 2] || goldColor[2]);
       doc.text("VYUHA CREATION", 20, 22);
 
       doc.setFont("helvetica", "normal");
@@ -795,12 +1205,11 @@
       doc.setTextColor(245, 245, 245);
       doc.text("Photography & Cinematic Studio | Official Custom Brochure", 20, 28);
 
-      // Contact detail row in header
       doc.setFontSize(8);
       doc.setTextColor(170, 170, 170);
       doc.text("Contact: +91 96400 50176  |  Email: workwithvyuha@gmail.com  |  Telangana", 20, 36);
 
-      // Document Title Body Section
+      // Proposal Title
       doc.setFont("helvetica", "bold");
       doc.setFontSize(16);
       doc.setTextColor(darkColor[0], darkColor[1], darkColor[2]);
@@ -825,7 +1234,7 @@
       doc.text(`Client Name: ${name}`, 20, 88);
       doc.text(`Contact Number: ${phone}`, 20, 94);
       doc.text(`Email Address: ${email}`, 20, 100);
-      doc.text(`Tentative Celebration Date: ${date}`, 20, 106);
+      doc.text(`Celebration Date Status: ${dateStatus === 'fixed' ? dateValue : 'Tentative - Date Not Fixed Yet'}`, 20, 106);
 
       // Package Configuration Section
       doc.setFont("helvetica", "bold");
@@ -850,36 +1259,43 @@
       doc.setFontSize(9);
       doc.setTextColor(60, 60, 60);
 
-      // Map inclusions
-      let consolidatedInclusions = [];
-      if (events.includes('Haldi')) {
-        consolidatedInclusions.push("- Haldi: Traditional Photography, Traditional Videography, Candid Photography, Cinematic Videography");
-      }
-      if (events.includes('Mehndi')) {
-        consolidatedInclusions.push("- Mehndi: Traditional Photography, Traditional Videography, Candid Photography, Cinematic Videography");
-      }
-      if (events.includes('Sangeeth')) {
-        consolidatedInclusions.push("- Sangeeth: Traditional Photography, Traditional Videography, Candid Photography, Cinematic Videography");
-      }
-      if (events.includes('Reception')) {
-        consolidatedInclusions.push("- Reception: Traditional Photography, Traditional Videography, Candid Photography, Cinematic Videography, Drone, LED, Youtube Live");
-      }
-      if (events.includes('Wedding')) {
-        consolidatedInclusions.push("- Wedding: Traditional Photography, Traditional Videography, Candid Photography, Cinematic Videography, Drone, LED, Youtube Live");
-      }
-
-      consolidatedInclusions.push(`- Camera squad custom scaled to cover ${days} full days of schedules.`);
-      consolidatedInclusions.push("- Complete high-resolution master processed deliveries via secured digital folders.");
-
-      if (days >= 3) {
-        consolidatedInclusions.push("- Premium physical leather-bound lay-flat custom printed legacy visual album.");
-      } else {
-        consolidatedInclusions.push("- Premium lay-flat visual canvas print custom layouts.");
-      }
-
-      consolidatedInclusions.forEach(inc => {
-        doc.text(inc, 20, inclusionY);
+      // Map inclusions event-by-event
+      events.forEach(ev => {
+        // Draw Event Title
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(10);
+        doc.setTextColor(goldColor[0], goldColor[1], goldColor[2]);
+        doc.text(`${ev} Event Inclusions:`, 20, inclusionY);
         inclusionY += 6;
+
+        // Draw Inclusions list for this event
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(9);
+        doc.setTextColor(80, 80, 80);
+        
+        const eventInclusions = selectedInclusions[ev] || [];
+        if (eventInclusions.length === 0) {
+          doc.text("  - No inclusions selected", 20, inclusionY);
+          inclusionY += 6;
+        } else {
+          eventInclusions.forEach(inc => {
+            doc.text(`  - ${inc}`, 20, inclusionY);
+            inclusionY += 5;
+            
+            // Check for page overflow
+            if (inclusionY > 260) {
+              doc.addPage();
+              inclusionY = 25;
+            }
+          });
+        }
+        inclusionY += 4; // Spacing after event inclusions list
+        
+        // Check for page overflow
+        if (inclusionY > 260) {
+          doc.addPage();
+          inclusionY = 25;
+        }
       });
 
       // Special Message Section
@@ -892,11 +1308,10 @@
       doc.setFontSize(9);
       doc.setTextColor(darkColor[0], darkColor[1], darkColor[2]);
       
-      // Handle multi-line message wrapping
       const wrappedMessage = doc.splitTextToSize(message, 170);
       doc.text(wrappedMessage, 20, inclusionY + 14);
 
-      // Brand Footer Section
+      // Footer Section
       doc.setFillColor(darkColor[0], darkColor[1], darkColor[2]);
       doc.rect(0, 275, 210, 22, "F");
 
@@ -910,10 +1325,9 @@
       doc.setTextColor(150, 150, 150);
       doc.text("Sadashivpet, Medak, Telangana 502291 | Booking Hotline: +91 96400 50176", 20, 290);
 
-      // Download PDF
+      // Download dynamic PDF
       doc.save(`Vyuha_Custom_Package_${name.replace(/\s+/g, '_')}.pdf`);
     }
   </script>
-
 </body>
 </html>
