@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Optimization -->
+  <title>Premium Services & Deliverables | Vyuha Creation Studio</title>
+  <meta name="description" content="Explore Vyuha Creation's photography and videography services: luxury wedding cinematic packages, pre-weddings, corporate event coverage, and instant mobile reels.">
+  <meta name="keywords" content="wedding cinematic package pricing, corporate video coverage deliverables, premium photographer service details">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    /* Services Specific Layouts */
+    .services-grid-full {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+    
+    .service-card-expanded {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: var(--border-radius-lg);
+      padding: 50px 40px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-smooth);
+    }
+    
+    .service-card-expanded::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gold-gradient);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition-smooth);
+    }
+    
+    .service-card-expanded:hover {
+      transform: translateY(-5px);
+      background: var(--bg-card-hover);
+      border-color: rgba(244, 160, 0, 0.2);
+      box-shadow: var(--gold-border-glow);
+    }
+    
+    .service-card-expanded:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .service-title-area {
+      margin-bottom: 25px;
+    }
+    
+    .service-icon-wrap {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      background: rgba(244, 160, 0, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-gold);
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      border: 1px solid rgba(244, 160, 0, 0.15);
+    }
+    
+    .deliverables-list {
+      list-style: none;
+      margin: 25px 0 35px 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .deliverables-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 12px;
+    }
+    
+    .deliverables-list li i {
+      color: var(--color-gold);
+      font-size: 0.8rem;
+    }
+    
+    /* Deliverables Table Area */
+    .deliverables-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin-top: 50px;
+      background: var(--bg-card);
+      border-radius: var(--border-radius-lg);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 30px;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-family: var(--font-sans);
+    }
+    
+    thead th {
+      font-family: var(--font-serif-brand);
+      color: var(--color-gold);
+      font-size: 1rem;
+      padding: 20px;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+      letter-spacing: 1px;
+    }
+    
+    tbody td {
+      padding: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+      color: var(--color-text-secondary);
+      font-size: 0.9rem;
+    }
+    
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+    
+    tbody tr:hover {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    
+    /* Pipeline Process Steps */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      margin-top: 60px;
+      position: relative;
+    }
+    
+    .process-step {
+      text-align: center;
+      position: relative;
+    }
+    
+    .process-step-number {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(18, 18, 18, 0.8);
+      border: 2px solid rgba(255, 255, 255, 0.08);
+      color: var(--color-text-secondary);
+      font-family: var(--font-serif-brand);
+      font-size: 1.3rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px auto;
+      transition: var(--transition-smooth);
+      position: relative;
+      z-index: 2;
+    }
+    
+    .process-step:hover .process-step-number {
+      border-color: var(--color-gold);
+      color: var(--color-gold);
+      box-shadow: var(--gold-border-glow);
+      transform: scale(1.08);
+    }
+    
+    @media (max-width: 1024px) {
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+      .service-card-expanded {
+        padding: 35px 24px;
+      }
+      .deliverables-table-wrap {
+        padding: 20px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================
+       HEADER / NAVIGATION BAR
+       ========================================== -->
+  <header>
+    <div class="navbar">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">V</div>
+        <div class="logo-text">VYUHA<span>CREATION</span></div>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      
+      <div class="nav-actions">
+        <a href="contact.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.75rem;">Book Now</a>
+        <button class="hamburger" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay Navigation -->
+  <ul class="mobile-nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">Our Story</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="contact.html" class="btn btn-primary" style="margin-top: 20px;">Book A Shoot</a></li>
+  </ul>
+
+  <!-- ==========================================
+       PAGE HERO
+       ========================================== -->
+  <section style="padding: 160px 40px 60px 40px; text-align: center; background: linear-gradient(180deg, var(--bg-dark-charcoal) 0%, var(--bg-pure-black) 100%); border-bottom: 1px solid rgba(255,255,255,0.02);">
+    <div class="container reveal">
+      <span class="script-text">What We Deliver</span>
+      <h1 style="font-size: clamp(2.2rem, 5vw, 4rem); font-family: var(--font-serif-brand); margin-top: 10px;">Our Cinematic Services</h1>
+      <p style="max-width: 600px; margin: 15px auto 0 auto; color: var(--color-text-secondary);">An elite breakdown of our custom photography and cinematic videography packages. Crafted for perfection.</p>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       DETAILED SERVICES GRID
+       ========================================== -->
+  <section style="padding-top: 40px; padding-bottom: 80px;">
+    <div class="container">
+      
+      <div class="services-grid-full">
+        <!-- Service 1: Wedding Flagship -->
+        <div class="service-card-expanded reveal" id="wedding">
+          <div class="service-title-area">
+            <div class="service-icon-wrap"><i class="fa-solid fa-heart"></i></div>
+            <h3>Wedding Photography & Films</h3>
+            <p style="margin-top: 15px;">Our flagship masterpiece. We blend raw emotional candids with majestic wide-angle cinematic films to create a high-fidelity wedding visual document.</p>
+          </div>
+          <div>
+            <ul class="deliverables-list">
+              <li><i class="fa-solid fa-circle-check"></i> <span>Cinematic Color-Graded Film (30-40 mins)</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span>2x Instagram Event Reels (48hr delivery)</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span>Premium Leather Lay-Flat Album (200 pages)</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span>Raw & processed high-res digital photos</span></li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary whatsapp-booking-btn" data-service="Wedding Photography & Films" style="width: 100%;">Book This Service</a>
+          </div>
+        </div>
+
+        <!-- Service 2: Pre-wedding -->
+        <div class="service-card-expanded reveal" style="transition-delay: 0.1s;" id="pre-wedding">
+          <div class="service-title-area">
+            <div class="service-icon-wrap"><i class="fa-solid fa-ring"></i></div>
+            <h3>Pre-Wedding & Couple Shoots</h3>
+            <p style="margin-top: 15px;">Capturing your intimate story in breathtaking landscapes. We plan thematic visual designs, matching warm palettes, sunsets, and cinematic slow-motion glances.</p>
+          </div>
+          <div>
+            <ul class="deliverables-list">
+              <li><i class="fa-solid fa-circle-check"></i> <span>3-Minute Cinematic Couple Trailer</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span>50+ Detailed Processed Portraits</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span>Outdoor Golden Hour Drone coverage</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span>Location guidance & styling direction</span></li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary whatsapp-booking-btn" data-service="Pre-Wedding & Couple Shoot" style="width: 100%;">Book This Service</a>
+          </div>
+        </div>
+
+        <!-- Service 3: Corporate Events -->
+        <div class="service-card-expanded reveal" style="transition-delay: 0.2s;" id="corporate">
+          <div class="service-title-area">
+            <div class="service-icon-wrap"><i class="fa-solid fa-briefcase"></i></div>
+            <h3>Corporate Events Coverage</h3>
+            <p style="margin-top: 15px;">Polished, precise, and crisp documentation of corporate keynotes, product launches, corporate seminars, and dynamic multi-day summits.</p>
+          </div>
+          <div>
+            <ul class="deliverables-list">
+              <li><i class="fa-solid fa-circle-check"></i> <span>Summary Event After-Movie (3 mins)</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span>High-res keynote speaker documentation</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span>Corporate headshots and press release files</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span>Next-day visual highlights packages</span></li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary whatsapp-booking-btn" data-service="Corporate Events Coverage" style="width: 100%;">Book This Service</a>
+          </div>
+        </div>
+
+        <!-- Service 4: College Festivals -->
+        <div class="service-card-expanded reveal" id="events">
+          <div class="service-title-area">
+            <div class="service-icon-wrap"><i class="fa-solid fa-graduation-cap"></i></div>
+            <h3>College & School Events</h3>
+            <p style="margin-top: 15px;">High-energy concerts, music festivals, annual functions, and college fashion shows. Dynamic, fast-cutting visual engineering that captures the raw youth spirit.</p>
+          </div>
+          <div>
+            <ul class="deliverables-list">
+              <li><i class="fa-solid fa-circle-check"></i> <span>Energetic Concert Highlight Reel</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span>Crowd, light show, and artist performance shots</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span>Complete stage sound-synced video raw files</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span>Fast 72-hour final package turnaround</span></li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary whatsapp-booking-btn" data-service="College & School Events" style="width: 100%;">Book This Service</a>
+          </div>
+        </div>
+
+        <!-- Service 5: Cultural & Birthday Events -->
+        <div class="service-card-expanded reveal" style="transition-delay: 0.1s;" id="birthdays">
+          <div class="service-title-area">
+            <div class="service-icon-wrap"><i class="fa-solid fa-cake-candles"></i></div>
+            <h3>Cultural & Birthday Shoots</h3>
+            <p style="margin-top: 15px;">Artistic, warm captures of family celebrations, classical dance performances, traditional festivals, and milestone birthday anniversaries.</p>
+          </div>
+          <div>
+            <ul class="deliverables-list">
+              <li><i class="fa-solid fa-circle-check"></i> <span>Candid family moments documentation</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span>Performances close-up action shots</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span>Sleek digital album web gallery access</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span>Beautiful aesthetic canvas prints options</span></li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary whatsapp-booking-btn" data-service="Cultural & Birthday Shoots" style="width: 100%;">Book This Service</a>
+          </div>
+        </div>
+
+        <!-- Service 6: Instant Reels & Mobile -->
+        <div class="service-card-expanded reveal" style="transition-delay: 0.2s;" id="reels">
+          <div class="service-title-area">
+            <div class="service-icon-wrap"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <h3>Instant Reels & Mobile Coverage</h3>
+            <p style="margin-top: 15px;">Specifically designed for the modern creator. Vertical 9:16 high-impact storytelling, snappy sound transitions, and swift mobile videography setups.</p>
+          </div>
+          <div>
+            <ul class="deliverables-list">
+              <li><i class="fa-solid fa-circle-check"></i> <span>3x Premium edited Instagram reels</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span>48-Hour delivery guarantee</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span>Trending audio matching & transition cuts</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span>Compact non-intrusive mobile camera rig</span></li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary whatsapp-booking-btn" data-service="Instant Reels & Mobile Coverage" style="width: 100%;">Book This Service</a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SUMMARY COMPARISON TABLE
+       ========================================== -->
+  <section style="background-color: var(--bg-dark-charcoal); padding-top: 100px; padding-bottom: 100px;">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="script-text">Quick Matrix</span>
+        <h2 class="section-title center">Deliverables Comparison</h2>
+        <p>A transparent overview of our professional packages, key highlights, and delivery turnaround windows.</p>
+      </div>
+      
+      <div class="deliverables-table-wrap reveal">
+        <table>
+          <thead>
+            <tr>
+              <th>Service Domain</th>
+              <th>Candid Frames</th>
+              <th>Cinematic Cut</th>
+              <th>Album Quality</th>
+              <th>Delivery ETA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Weddings</strong></td>
+              <td>Unlimited (1000+ Processed)</td>
+              <td>Full length film (35m) + Trailer</td>
+              <td>Premium Luxury Leather Cover</td>
+              <td>4 - 6 Weeks</td>
+            </tr>
+            <tr>
+              <td><strong>Pre-Wedding</strong></td>
+              <td>80+ Custom Graded</td>
+              <td>3-Minute Love Story Cut</td>
+              <td>Lay-flat digital photobook</td>
+              <td>2 - 3 Weeks</td>
+            </tr>
+            <tr>
+              <td><strong>Corporate Events</strong></td>
+              <td>300+ Conference Files</td>
+              <td>2-Minute summit aftermovie</td>
+              <td>Digital delivery panel</td>
+              <td>1 Week</td>
+            </tr>
+            <tr>
+              <td><strong>College Festivals</strong></td>
+              <td>500+ Concert/Crowd files</td>
+              <td>High energy concert cuts</td>
+              <td>Digital archive folder</td>
+              <td>72 Hours</td>
+            </tr>
+            <tr>
+              <td><strong>Instant Reels</strong></td>
+              <td>Mobile Candid Mocks</td>
+              <td>3x Trending vertical reels</td>
+              <td>Shared cloud link</td>
+              <td>48 Hours</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       THE PIPELINE PROCESS (How We Work)
+       ========================================== -->
+  <section style="padding-top: 100px; padding-bottom: 120px;">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="script-text">Our Pipeline</span>
+        <h2 class="section-title center">The Vyuha Process</h2>
+        <p>We believe in high-end precision. Here is how your visual masterpieces progress from raw ideas to stunning final frames.</p>
+      </div>
+      
+      <div class="process-grid">
+        <!-- Step 1 -->
+        <div class="process-step reveal">
+          <div class="process-step-number">01</div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Consultation</h3>
+          <p style="font-size: 0.9rem;">We sit down to align on your mood board, custom theme, event schedules, and critical visual references.</p>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="process-step reveal" style="transition-delay: 0.15s;">
+          <div class="process-step-number">02</div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 10px;">The Shoot</h3>
+          <p style="font-size: 0.9rem;">Our experienced camera squad directs, frames, and records using advanced lenses and premium drone grids.</p>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="process-step reveal" style="transition-delay: 0.3s;">
+          <div class="process-step-number">03</div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Grading & Editing</h3>
+          <p style="font-size: 0.9rem;">We color grade using cinema LUTs, weave narrative audio lines, and polish layouts frame by frame.</p>
+        </div>
+        
+        <!-- Step 4 -->
+        <div class="process-step reveal" style="transition-delay: 0.45s;">
+          <div class="process-step-number">04</div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Album Delivery</h3>
+          <p style="font-size: 0.9rem;">We ship premium leather lay-flat albums to your doorstep and host full high-res files on our cloud.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-column footer-about">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">V</div>
+          <div class="logo-text">VYUHA<span>CREATION</span></div>
+        </a>
+        <p>A premium cinematic digital experience transforming fleeting memories into timeless, color-graded visual legacies. Trusted for weddings, corporate coverage, and high-energy college shoots.</p>
+        <div class="social-links">
+          <a href="https://instagram.com" class="social-icon" target="_blank" aria-label="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://youtube.com" class="social-icon" target="_blank" aria-label="Youtube Channel"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://facebook.com" class="social-icon" target="_blank" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="services.html">Services Portfolio</a></li>
+          <li><a href="gallery.html">Interactive Gallery</a></li>
+          <li><a href="contact.html">Book / Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Our Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html#wedding">Weddings Photography</a></li>
+          <li><a href="services.html#cinematic">Cinematic Wedding Reels</a></li>
+          <li><a href="services.html#pre-wedding">Pre-Wedding Shoots</a></li>
+          <li><a href="services.html#corporate">Corporate Coverage</a></li>
+          <li><a href="services.html#events">Cultural & College Shows</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Studio Details</h4>
+        <div class="footer-contact-info">
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Vyuha Studio Complex, Phase 3, Film City Road, Mumbai - 400065</span>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+91 98765 43210</span>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>bookings@vyuhacreation.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <span>&copy; 2026 Vyuha Creation. All Rights Reserved. Designed for premium visuals.</span>
+      <span>ISO 9001:2015 Visual Arts Studio</span>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Widget Button -->
+  <a href="#" class="whatsapp-widget whatsapp-booking-btn" data-service="Services Overview Consultation" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- ==========================================
+       SCRIPTS
+       ========================================== -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>

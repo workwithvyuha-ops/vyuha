@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Optimization -->
+  <title>Cinematic Gallery | Vyuha Creation Photography Portfolio</title>
+  <meta name="description" content="Explore Vyuha Creation's interactive masonry portfolio. High-resolution imagery of weddings, couple portraits, corporate seminars, and cinematic events.">
+  <meta name="keywords" content="wedding photo gallery, corporate event photos, pre-wedding couple photoshoot, cinematic frames portfolio">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    /* Gallery-Specific Masonry Layout */
+    .filter-menu {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 60px;
+    }
+    
+    .filter-btn {
+      background: rgba(18, 18, 18, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--color-text-secondary);
+      padding: 10px 24px;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: var(--border-radius-sm);
+      transition: var(--transition-fast);
+    }
+    
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--gold-gradient);
+      color: var(--bg-pure-black);
+      border-color: transparent;
+      box-shadow: var(--gold-border-glow);
+    }
+    
+    /* Native CSS Masonry Engine */
+    .masonry-grid {
+      column-count: 3;
+      column-gap: 24px;
+      width: 100%;
+    }
+    
+    .gallery-item {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 24px;
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: var(--border-radius-md);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      transition: opacity 0.4s ease, transform 0.4s ease, border-color 0.4s ease;
+      break-inside: avoid;
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+    
+    .item-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 60%);
+      opacity: 0;
+      transition: var(--transition-fast);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 30px;
+    }
+    
+    .gallery-item:hover .item-overlay {
+      opacity: 1;
+    }
+    
+    .item-tag {
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+    
+    .item-title {
+      font-family: var(--font-serif-display);
+      font-size: 1.25rem;
+      color: var(--color-text-primary);
+      margin-bottom: 5px;
+    }
+    
+    .item-caption {
+      font-size: 0.8rem;
+      color: var(--color-text-secondary);
+      font-weight: 300;
+    }
+    
+    /* Play tag for video reels */
+    .video-tag {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--gold-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--bg-pure-black);
+      font-size: 0.9rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      z-index: 2;
+    }
+    
+    @media (max-width: 1024px) {
+      .masonry-grid {
+        column-count: 2;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .masonry-grid {
+        column-count: 1;
+        column-gap: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================
+       HEADER / NAVIGATION BAR
+       ========================================== -->
+  <header>
+    <div class="navbar">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">V</div>
+        <div class="logo-text">VYUHA<span>CREATION</span></div>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      
+      <div class="nav-actions">
+        <a href="contact.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.75rem;">Book Now</a>
+        <button class="hamburger" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay Navigation -->
+  <ul class="mobile-nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">Our Story</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="gallery.html" class="active">Gallery</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="contact.html" class="btn btn-primary" style="margin-top: 20px;">Book A Shoot</a></li>
+  </ul>
+
+  <!-- ==========================================
+       PAGE HERO
+       ========================================== -->
+  <section style="padding: 160px 40px 60px 40px; text-align: center; background: linear-gradient(180deg, var(--bg-dark-charcoal) 0%, var(--bg-pure-black) 100%); border-bottom: 1px solid rgba(255,255,255,0.02);">
+    <div class="container reveal">
+      <span class="script-text">Our Masterpieces</span>
+      <h1 style="font-size: clamp(2.2rem, 5vw, 4rem); font-family: var(--font-serif-brand); margin-top: 10px;">The Cinematic Gallery</h1>
+      <p style="max-width: 600px; margin: 15px auto 0 auto; color: var(--color-text-secondary);">An immersive collection of raw emotions, glowing golden hours, luxury celebrations, and dynamic event storytelling.</p>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       GALLERY CONTAINER WITH FILTERS
+       ========================================== -->
+  <section style="padding-top: 40px; padding-bottom: 120px;">
+    <div class="container">
+      
+      <!-- Filtering Tabs -->
+      <div class="filter-menu reveal">
+        <button class="filter-btn active" data-filter="all">All Frames</button>
+        <button class="filter-btn" data-filter="weddings">Weddings</button>
+        <button class="filter-btn" data-filter="pre-wedding">Pre-Wedding</button>
+        <button class="filter-btn" data-filter="corporate">Corporate</button>
+        <button class="filter-btn" data-filter="events">Events & Shows</button>
+        <button class="filter-btn" data-filter="reels">Reels & Videos</button>
+      </div>
+      
+      <!-- Masonry Grid -->
+      <div class="masonry-grid reveal" style="transition-delay: 0.2s;" id="gallery-grid">
+        
+        <!-- Item 1: Wedding Tall -->
+        <div class="gallery-item" data-category="weddings" data-highres="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800" alt="Cinematic outdoor wedding setup by Vyuha Creation" loading="lazy">
+          <div class="item-overlay">
+            <span class="item-tag">Wedding</span>
+            <h4 class="item-title">Golden Grandeur</h4>
+            <p class="item-caption">Traditional outdoor lawn wedding setup during twilight.</p>
+          </div>
+        </div>
+        
+        <!-- Item 2: Pre-Wedding Sunsets -->
+        <div class="gallery-item" data-category="pre-wedding" data-highres="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800" alt="Beautiful couple sunset pre-wedding portrait" loading="lazy">
+          <div class="item-overlay">
+            <span class="item-tag">Pre-Wedding</span>
+            <h4 class="item-title">Whispering Sunset</h4>
+            <p class="item-caption">Warm golden light portrait along the countryside hills.</p>
+          </div>
+        </div>
+        
+        <!-- Item 3: Video Reel with special tag -->
+        <div class="gallery-item play-btn-trigger" data-category="reels" data-video-url="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+          <div class="video-tag"><i class="fa-solid fa-play"></i></div>
+          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800" alt="Bridal cinematic reel frame preview" loading="lazy">
+          <div class="item-overlay">
+            <span class="item-tag">Reels / Cinematic</span>
+            <h4 class="item-title">Ethereal Steps</h4>
+            <p class="item-caption">Cinematic walkthrough showcasing slow-motion bridal entry.</p>
+          </div>
+        </div>
+        
+        <!-- Item 4: Corporate High-res -->
+        <div class="gallery-item" data-category="corporate" data-highres="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=1200">
+          <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=800" alt="Corporate presentation event cover" loading="lazy">
+          <div class="item-overlay">
+            <span class="item-tag">Corporate</span>
+            <h4 class="item-title">Modern Keynote</h4>
+            <p class="item-caption">High-precision executive conference documentation.</p>
+          </div>
+        </div>
+        
+        <!-- Item 5: Indian Wedding -->
+        <div class="gallery-item" data-category="weddings" data-highres="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=1200">
+          <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=800" alt="Indian traditional wedding ceremony groom and bride" loading="lazy">
+          <div class="item-overlay">
+            <span class="item-tag">Wedding</span>
+            <h4 class="item-title">Vermilion Legacy</h4>
+            <p class="item-caption">Vibrant traditional Indian wedding ceremony captures.</p>
+          </div>
+        </div>
+        
+        <!-- Item 6: Events Concert -->
+        <div class="gallery-item" data-category="events" data-highres="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1200">
+          <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800" alt="College music festival concert photography" loading="lazy">
+          <div class="item-overlay">
+            <span class="item-tag">Events / Concert</span>
+            <h4 class="item-title">Sonic Resonance</h4>
+            <p class="item-caption">High-energy college music festival night stage coverage.</p>
+          </div>
+        </div>
+        
+        <!-- Item 7: Pre-Wedding Forest -->
+        <div class="gallery-item" data-category="pre-wedding" data-highres="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1200">
+          <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=800" alt="Couple portrait in dense green forest" loading="lazy">
+          <div class="item-overlay">
+            <span class="item-tag">Pre-Wedding</span>
+            <h4 class="item-title">Verdant Embrace</h4>
+            <p class="item-caption">Atmospheric deep-woods couple visual narrative.</p>
+          </div>
+        </div>
+        
+        <!-- Item 8: Corporate Stage -->
+        <div class="gallery-item" data-category="corporate" data-highres="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200">
+          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800" alt="Premium corporate stage event with lights" loading="lazy">
+          <div class="item-overlay">
+            <span class="item-tag">Corporate</span>
+            <h4 class="item-title">Vanguard Summit</h4>
+            <p class="item-caption">Dramatic stage framing at an international tech forum.</p>
+          </div>
+        </div>
+        
+        <!-- Item 9: Event Spotlight -->
+        <div class="gallery-item" data-category="events" data-highres="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200">
+          <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800" alt="Stage spotlight and crowd overlay" loading="lazy">
+          <div class="item-overlay">
+            <span class="item-tag">Events / Show</span>
+            <h4 class="item-title">Ignite the Night</h4>
+            <p class="item-caption">Cultural event spotlight casting dynamic beams on crowd.</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-column footer-about">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">V</div>
+          <div class="logo-text">VYUHA<span>CREATION</span></div>
+        </a>
+        <p>A premium cinematic digital experience transforming fleeting memories into timeless, color-graded visual legacies. Trusted for weddings, corporate coverage, and high-energy college shoots.</p>
+        <div class="social-links">
+          <a href="https://instagram.com" class="social-icon" target="_blank" aria-label="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://youtube.com" class="social-icon" target="_blank" aria-label="Youtube Channel"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://facebook.com" class="social-icon" target="_blank" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="services.html">Services Portfolio</a></li>
+          <li><a href="gallery.html">Interactive Gallery</a></li>
+          <li><a href="contact.html">Book / Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Our Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html#wedding">Weddings Photography</a></li>
+          <li><a href="services.html#cinematic">Cinematic Wedding Reels</a></li>
+          <li><a href="services.html#pre-wedding">Pre-Wedding Shoots</a></li>
+          <li><a href="services.html#corporate">Corporate Coverage</a></li>
+          <li><a href="services.html#events">Cultural & College Shows</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Studio Details</h4>
+        <div class="footer-contact-info">
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Vyuha Studio Complex, Phase 3, Film City Road, Mumbai - 400065</span>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+91 98765 43210</span>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>bookings@vyuhacreation.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <span>&copy; 2026 Vyuha Creation. All Rights Reserved. Designed for premium visuals.</span>
+      <span>ISO 9001:2015 Visual Arts Studio</span>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Widget Button -->
+  <a href="#" class="whatsapp-widget whatsapp-booking-btn" data-service="Portfolio Gallery Consultation" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- ==========================================
+       SCRIPTS
+       ========================================== -->
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+
+</body>
+</html>

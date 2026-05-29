@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Optimization -->
+  <title>Vyuha Creation | Premium Photography & Cinematic Studio</title>
+  <meta name="description" content="Vyuha Creation is a premium cinematic photography and videography studio specializing in wedding films, pre-weddings, corporate events, and lifestyle visual storytelling.">
+  <meta name="keywords" content="wedding photography, cinematic films, wedding videography, corporate events coverage, pre-wedding shoot, professional photographer, reel maker">
+  
+  <!-- FontAwesome Icons & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    /* Homepage Specific CSS adjustments */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1920') no-repeat center center/cover;
+      overflow: hidden;
+    }
+    
+    .hero-glow {
+      position: absolute;
+      width: 50vw;
+      height: 50vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(244, 160, 0, 0.12) 0%, transparent 60%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      pointer-events: none;
+      animation: pulsate 8s infinite alternate ease-in-out;
+    }
+    
+    @keyframes pulsate {
+      0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.8; }
+      100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+    }
+    
+    .hero-content {
+      text-align: center;
+      z-index: 2;
+      max-width: 900px;
+      padding: 0 20px;
+    }
+    
+    .hero-subtitle {
+      font-size: 0.9rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    
+    .hero-title {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-family: var(--font-serif-brand);
+      line-height: 1.1;
+      color: var(--color-text-primary);
+      margin-bottom: 25px;
+      text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    }
+    
+    .hero-desc {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      max-width: 650px;
+      margin: 0 auto 40px auto;
+      color: var(--color-text-secondary);
+    }
+    
+    .hero-btns {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    /* Intro Section */
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 80px;
+    }
+    
+    .intro-image-container {
+      position: relative;
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    }
+    
+    .intro-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: var(--transition-smooth);
+    }
+    
+    .intro-image-container:hover img {
+      transform: scale(1.05);
+    }
+    
+    .intro-badge {
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      background: rgba(18, 18, 18, 0.85);
+      border: 1px solid var(--color-gold);
+      padding: 20px;
+      border-radius: var(--border-radius-md);
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 2;
+    }
+    
+    .intro-badge .number {
+      font-size: 2.2rem;
+      font-family: var(--font-serif-brand);
+      font-weight: 700;
+      color: var(--color-gold);
+      line-height: 1;
+    }
+    
+    .intro-badge .label {
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--color-text-primary);
+      margin-top: 5px;
+    }
+    
+    /* Featured Reel Card */
+    .featured-reel {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1920') no-repeat center center/cover;
+      background-attachment: fixed;
+      text-align: center;
+      padding: 150px 40px;
+    }
+    
+    .play-card {
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(18, 18, 18, 0.4);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: var(--border-radius-lg);
+      padding: 60px 40px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      position: relative;
+    }
+    
+    .play-icon-wrap {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: var(--gold-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 30px auto;
+      cursor: pointer;
+      box-shadow: var(--gold-button-glow);
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+    
+    .play-icon-wrap::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 2px solid var(--color-gold);
+      animation: pulse-ring 2s infinite;
+    }
+    
+    @keyframes pulse-ring {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+    
+    .play-icon-wrap:hover {
+      transform: scale(1.08);
+      background: var(--color-gold-light);
+    }
+    
+    .play-icon-wrap i {
+      font-size: 2rem;
+      color: var(--bg-pure-black);
+      margin-left: 6px;
+    }
+    
+    /* Services grid specific */
+    .services-grid {
+      grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+    }
+    
+    .service-card-icon {
+      font-size: 2.5rem;
+      color: var(--color-gold);
+      margin-bottom: 25px;
+      background: linear-gradient(135deg, #F4A000, #FFB933);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    /* Testimonial slider style */
+    .testimonial-card {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(18, 18, 18, 0.4);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: var(--border-radius-lg);
+      padding: 60px 40px;
+      position: relative;
+    }
+    
+    .testimonial-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 2px solid var(--color-gold);
+      object-fit: cover;
+      margin: 0 auto 25px auto;
+      display: block;
+      box-shadow: var(--gold-border-glow);
+    }
+    
+    .testimonial-quote {
+      font-family: var(--font-serif-display);
+      font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+      font-style: italic;
+      color: var(--color-text-primary);
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+    
+    .testimonial-author {
+      font-family: var(--font-serif-brand);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      letter-spacing: 1px;
+    }
+    
+    .testimonial-meta {
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-top: 5px;
+    }
+    
+    .testimonial-stars {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      color: var(--color-gold);
+      margin-top: 15px;
+    }
+    
+    /* Media responsiveness */
+    @media (max-width: 1024px) {
+      .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero-btns {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+      .hero-btns .btn {
+        width: 100%;
+        max-width: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================
+       HEADER / NAVIGATION BAR
+       ========================================== -->
+  <header>
+    <div class="navbar">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">V</div>
+        <div class="logo-text">VYUHA<span>CREATION</span></div>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      
+      <div class="nav-actions">
+        <a href="contact.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.75rem;">Book Now</a>
+        <button class="hamburger" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay Navigation -->
+  <ul class="mobile-nav">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">Our Story</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="contact.html" class="btn btn-primary" style="margin-top: 20px;">Book A Shoot</a></li>
+  </ul>
+
+  <!-- ==========================================
+       HERO SECTION
+       ========================================== -->
+  <section class="hero" id="hero-section">
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <span class="hero-subtitle reveal">Photography & Videography Studio</span>
+      <h1 class="hero-title reveal">Where Memories Become Cinematic</h1>
+      <p class="hero-desc reveal">Every frame captures genuine emotion, timeless celebrations, and authentic stories. We don't just record moments; we craft visual masterpieces.</p>
+      <div class="hero-btns reveal" style="transition-delay: 0.3s;">
+        <a href="contact.html" class="btn btn-primary">Book Your Shoot</a>
+        <a href="gallery.html" class="btn btn-secondary">Explore Gallery</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       BRAND STORY PREVIEW (Behind the Lens)
+       ========================================== -->
+  <section class="about-preview">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-image-container reveal">
+          <img src="https://images.unsplash.com/photo-1520854221256-17451cc3599a?q=80&w=1200" alt="Beautiful wedding portrait at golden hour by Vyuha Creation">
+          <div class="intro-badge">
+            <span class="number">8+</span>
+            <span class="label">Years of Stories</span>
+          </div>
+        </div>
+        <div class="intro-content reveal" style="transition-delay: 0.2s;">
+          <span class="script-text">The Storytellers</span>
+          <h2 class="section-title">Behind The Lens</h2>
+          <p>We believe photography is not merely about pressing a shutter. It's about freezing a heartbeat, documenting tears of joy, and framing visual legacies that you can look back on for generations.</p>
+          <p>Founded on passion and cinematic excellence, Vyuha Creation is a crew of visual artists dedicated to turning weddings, corporate occasions, and cultural celebrations into cinematic chronicles. Our approach is modern yet timeless, technical yet deeply emotional.</p>
+          <a href="about.html" class="btn btn-secondary" style="margin-top: 15px;">Read Our Journey</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FEATURED CINEMATIC REEL
+       ========================================== -->
+  <section class="featured-reel reveal">
+    <div class="container">
+      <div class="play-card">
+        <span class="script-text" style="color: var(--color-text-primary); font-size: 2.2rem;">Featured Film</span>
+        <h2 class="section-title center" style="margin-top: 10px; margin-bottom: 25px;">The Symphony of Love</h2>
+        <p style="max-width: 600px; margin: 0 auto 35px auto;">Experience the emotional heights of our flagship cinematography. A showcase of wedding storytelling, slow-motion visuals, and custom-graded cinematic frames.</p>
+        
+        <div class="play-icon-wrap play-btn-trigger" data-video-url="https://www.youtube.com/watch?v=dQw4w9WgXcQ" id="featured-play-button">
+          <i class="fa-solid fa-play"></i>
+        </div>
+        <span style="font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; color: var(--color-gold); display: block; margin-top: 10px;">Play Trailer (1:45 mins)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SERVICES PREVIEW
+       ========================================== -->
+  <section class="services-preview" style="background-color: var(--bg-dark-charcoal);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="script-text">What We Do</span>
+        <h2 class="section-title center">Crafting Premium Visuality</h2>
+        <p>From luxury weddings to dynamic corporate events, we provide premium storytelling packages customized to match your custom aesthetic.</p>
+      </div>
+      
+      <div class="grid-container services-grid reveal" style="transition-delay: 0.2s;">
+        <!-- Card 1: Wedding -->
+        <div class="card">
+          <div class="service-card-icon"><i class="fa-solid fa-camera-retro"></i></div>
+          <h3>Wedding Photography</h3>
+          <p>Emotional, candid storytelling. We frame the nervous smiles, stolen glances, and grand celebrations with artistic brilliance.</p>
+          <a href="services.html" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.75rem; margin-top: 10px;">Packages & Details</a>
+        </div>
+        
+        <!-- Card 2: Cinematic Film -->
+        <div class="card">
+          <div class="service-card-icon"><i class="fa-solid fa-video"></i></div>
+          <h3>Cinematic Wedding Reels</h3>
+          <p>Hollywood-grade visual storytelling. Expert camera movements, aerial drone shots, emotional audio capturing, and color-graded films.</p>
+          <a href="services.html" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.75rem; margin-top: 10px;">Packages & Details</a>
+        </div>
+        
+        <!-- Card 3: Events -->
+        <div class="card">
+          <div class="service-card-icon"><i class="fa-solid fa-building"></i></div>
+          <h3>Corporate & School Events</h3>
+          <p>Polished corporate seminars, cultural festivals, school gatherings, and college concerts. Crisp, high-precision visual documentation.</p>
+          <a href="services.html" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.75rem; margin-top: 10px;">Packages & Details</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       TESTIMONIALS SECTION
+       ========================================== -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="script-text">Real Stories</span>
+        <h2 class="section-title center">Words From Our Families</h2>
+        <p>Read about the cinematic experiences we have co-created with couples and corporate partners worldwide.</p>
+      </div>
+      
+      <!-- Static Testimonial Card with dynamic visuals -->
+      <div class="testimonial-card reveal" style="transition-delay: 0.2s;">
+        <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200" alt="Rohan and Priya, happy Vyuha Creation couple">
+        <p class="testimonial-quote">"Vyuha Creation did not just capture our wedding; they made it look like a Hollywood film. The cinematic reels they prepared were ready in 48 hours, and they literally brought tears to our eyes. Pro crew, fantastic color grading, and extremely polite demeanor throughout!"</p>
+        <h4 class="testimonial-author">Priya & Rohan Sharma</h4>
+        <div class="testimonial-meta">Wedding & Pre-Wedding Shoot</div>
+        <div class="testimonial-stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FINAL CALL TO ACTION
+       ========================================== -->
+  <section class="cta-banner" style="background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-pure-black) 100%); border-top: 1px solid rgba(244,160,0,0.1); padding: 100px 40px; text-align: center;">
+    <div class="container reveal">
+      <h2 class="section-title center" style="margin-bottom: 20px;">Ready to Co-create Your Story?</h2>
+      <p style="max-width: 600px; margin: 0 auto 40px auto; font-size: 1.1rem;">Whether it's the walk down the aisle, a corporate keynote, or an energetic college concert, Vyuha Creation brings precision and deep emotion to every single pixel.</p>
+      <a href="contact.html" class="btn btn-primary" style="padding: 18px 36px;">Schedule a Consultation</a>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-column footer-about">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">V</div>
+          <div class="logo-text">VYUHA<span>CREATION</span></div>
+        </a>
+        <p>A premium cinematic digital experience transforming fleeting memories into timeless, color-graded visual legacies. Trusted for weddings, corporate coverage, and high-energy college shoots.</p>
+        <div class="social-links">
+          <a href="https://instagram.com" class="social-icon" target="_blank" aria-label="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://youtube.com" class="social-icon" target="_blank" aria-label="Youtube Channel"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://facebook.com" class="social-icon" target="_blank" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="services.html">Services Portfolio</a></li>
+          <li><a href="gallery.html">Interactive Gallery</a></li>
+          <li><a href="contact.html">Book / Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Our Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html#wedding">Weddings Photography</a></li>
+          <li><a href="services.html#cinematic">Cinematic Wedding Reels</a></li>
+          <li><a href="services.html#pre-wedding">Pre-Wedding Shoots</a></li>
+          <li><a href="services.html#corporate">Corporate Coverage</a></li>
+          <li><a href="services.html#events">Cultural & College Shows</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Studio Details</h4>
+        <div class="footer-contact-info">
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Vyuha Studio Complex, Phase 3, Film City Road, Mumbai - 400065</span>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+91 98765 43210</span>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>bookings@vyuhacreation.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <span>&copy; 2026 Vyuha Creation. All Rights Reserved. Designed for premium visuals.</span>
+      <span>ISO 9001:2015 Visual Arts Studio</span>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Widget Button -->
+  <a href="#" class="whatsapp-widget whatsapp-booking-btn" data-service="General Studio Consultation" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- ==========================================
+       SCRIPTS
+       ========================================== -->
+  <!-- Global main script -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>

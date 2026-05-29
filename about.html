@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Optimization -->
+  <title>Our Story | Vyuha Creation Studio & Crew</title>
+  <meta name="description" content="Discover the emotional journey behind Vyuha Creation. Learn about our founder's vision, our struggle, our creative philosophy, and what makes us premium.">
+  <meta name="keywords" content="photography studio story, who is vyuha creation, wedding cinematic videographers, documentary photography">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    /* About-Specific Timeline Styles */
+    .timeline-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 80px auto 0 auto;
+    }
+    
+    .timeline-container::before {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(244,160,0,0) 0%, var(--color-gold) 15%, var(--color-gold) 85%, rgba(244,160,0,0) 100%);
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0;
+    }
+    
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 0 40px 60px 40px;
+      box-sizing: border-box;
+    }
+    
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--bg-pure-black);
+      border: 3px solid var(--color-gold);
+      top: 0;
+      z-index: 2;
+      box-shadow: var(--gold-border-glow);
+    }
+    
+    .timeline-item:nth-child(odd) {
+      left: 0;
+      text-align: right;
+    }
+    
+    .timeline-item:nth-child(odd)::after {
+      right: -8px;
+    }
+    
+    .timeline-item:nth-child(even) {
+      left: 50%;
+      text-align: left;
+    }
+    
+    .timeline-item:nth-child(even)::after {
+      left: -8px;
+    }
+    
+    .timeline-year {
+      font-family: var(--font-serif-brand);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--color-gold);
+      margin-bottom: 10px;
+    }
+    
+    .timeline-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      padding: 30px;
+      border-radius: var(--border-radius-md);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      transition: var(--transition-smooth);
+    }
+    
+    .timeline-item:hover .timeline-card {
+      transform: translateY(-5px);
+      border-color: rgba(244, 160, 0, 0.2);
+      box-shadow: var(--gold-border-glow);
+    }
+    
+    /* Philosphy Pillars styling */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 50px;
+    }
+    
+    .pillar-card {
+      text-align: center;
+      padding: 40px 30px;
+    }
+    
+    .pillar-icon {
+      font-size: 2.2rem;
+      color: var(--color-gold);
+      margin-bottom: 20px;
+    }
+    
+    /* BTS section grid */
+    .bts-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 50px;
+    }
+    
+    .bts-card {
+      position: relative;
+      border-radius: var(--border-radius-md);
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    }
+    
+    .bts-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-smooth);
+    }
+    
+    .bts-card:hover img {
+      transform: scale(1.06);
+    }
+    
+    .bts-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      opacity: 0;
+      transition: var(--transition-fast);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .bts-card:hover class {
+      opacity: 1;
+    }
+    
+    .bts-card:hover .bts-overlay {
+      opacity: 1;
+    }
+    
+    .bts-text {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--color-gold);
+    }
+    
+    /* Responsive timeline */
+    @media (max-width: 768px) {
+      .timeline-container::before {
+        left: 20px;
+      }
+      
+      .timeline-item {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 0;
+        text-align: left !important;
+      }
+      
+      .timeline-item::after {
+        left: 12px !important;
+      }
+      
+      .timeline-item:nth-child(even) {
+        left: 0;
+      }
+      
+      .pillars-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .bts-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================
+       HEADER / NAVIGATION BAR
+       ========================================== -->
+  <header>
+    <div class="navbar">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">V</div>
+        <div class="logo-text">VYUHA<span>CREATION</span></div>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">Our Story</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      
+      <div class="nav-actions">
+        <a href="contact.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.75rem;">Book Now</a>
+        <button class="hamburger" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay Navigation -->
+  <ul class="mobile-nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">Our Story</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="contact.html" class="btn btn-primary" style="margin-top: 20px;">Book A Shoot</a></li>
+  </ul>
+
+  <!-- ==========================================
+       PAGE HERO
+       ========================================== -->
+  <section style="padding: 160px 40px 60px 40px; text-align: center; background: linear-gradient(180deg, var(--bg-dark-charcoal) 0%, var(--bg-pure-black) 100%); border-bottom: 1px solid rgba(255,255,255,0.02);">
+    <div class="container reveal">
+      <span class="script-text">Our Philosophy</span>
+      <h1 style="font-size: clamp(2.2rem, 5vw, 4rem); font-family: var(--font-serif-brand); margin-top: 10px;">The Soul Behind the Screen</h1>
+      <p style="max-width: 600px; margin: 15px auto 0 auto; color: var(--color-text-secondary);">Photography isn't a job for Vyuha Creation; it's a relentless search for raw emotional truth, preserved elegantly in time.</p>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOUNDER'S STORY SECTION
+       ========================================== -->
+  <section style="padding-top: 40px; padding-bottom: 80px;">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-content reveal">
+          <span class="script-text">From the Founder</span>
+          <h2 class="section-title">The Struggle & The Spark</h2>
+          <p>Hi, I am Sourav, the founder and head storyteller of Vyuha Creation. My romance with the camera did not start in a fancy classroom or a studio. It began in the busy cultural lanes of my college, carrying a crop-sensor entry-level DSLR and photographing anything that had a story to tell.</p>
+          <p>In the beginning, it was hard. Getting client trust without a portfolio was a giant mountain. I worked as an assistant for months, carrying lights, standing in the rain, learning the rhythm of wedding rituals, and understanding how corporate schedules function.</p>
+          <p>When the pandemic hit in 2020, everything went dark. But instead of quitting, I treated it as a crucible. I locked myself in a room for 10 hours a day, studying Hollywood color grading, mastering complex editing structures, and testing dynamic camera rigs. Vyuha Creation was born out of that absolute dedication. Today, we are not just a photographer; we are a tight-knit family of cinematic creators who love visual engineering.</p>
+        </div>
+        <div class="intro-image-container reveal" style="transition-delay: 0.2s;">
+          <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=1200" alt="Sourav founder of Vyuha Creation taking standard outdoor cinematic camera photo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       TIMELINE OF STORY
+       ========================================== -->
+  <section style="background-color: var(--bg-dark-charcoal); padding-top: 100px; padding-bottom: 120px;">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="script-text">Our Milestones</span>
+        <h2 class="section-title center">The Vyuha Chronicles</h2>
+        <p>A chronological journey of our creative growth, artistic transitions, and major breakthroughs.</p>
+      </div>
+      
+      <div class="timeline-container">
+        <!-- Item 1 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-card">
+            <div class="timeline-year">2018</div>
+            <h3>The Spark</h3>
+            <p>Picked up the first second-hand camera. Shot small university gatherings, student theater plays, and local street grids, developing an eye for candid, authentic facial expressions.</p>
+          </div>
+        </div>
+        
+        <!-- Item 2 -->
+        <div class="timeline-item reveal" style="transition-delay: 0.15s;">
+          <div class="timeline-card">
+            <div class="timeline-year">2020</div>
+            <h3>The Crucible</h3>
+            <p>Faced absolute zero bookings. Spent 12 months in lockdown self-learning cinematic audio design, lighting arrays, advanced DaVinci Resolve grading, and narrative structure.</p>
+          </div>
+        </div>
+        
+        <!-- Item 3 -->
+        <div class="timeline-item reveal" style="transition-delay: 0.2s;">
+          <div class="timeline-card">
+            <div class="timeline-year">2022</div>
+            <h3>The Birth of Vyuha</h3>
+            <p>Officially launched "Vyuha Creation" as an independent visual crew. Booked our first three premium weddings and established our signature warm, cinematic-gold aesthetic.</p>
+          </div>
+        </div>
+        
+        <!-- Item 4 -->
+        <div class="timeline-item reveal" style="transition-delay: 0.25s;">
+          <div class="timeline-card">
+            <div class="timeline-year">2025</div>
+            <h3>Expanding Horizons</h3>
+            <p>Grew the crew to 10+ visual engineers. Integrated advanced dual-pilot heavy drone operations, professional stabilizer rigs, and entered high-scale corporate events coverage.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       OUR PILLARS / PHILOSOPHY
+       ========================================== -->
+  <section style="padding-top: 100px; padding-bottom: 100px;">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="script-text">Core Philosophy</span>
+        <h2 class="section-title center">The Pillars of Vyuha</h2>
+        <p>We do not just snap photos; we build visual legacies based on three strict professional commitments.</p>
+      </div>
+      
+      <div class="pillars-grid">
+        <!-- Pillar 1 -->
+        <div class="card pillar-card reveal">
+          <div class="pillar-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+          <h3>Emotional Truth</h3>
+          <p>We capture raw human connection, not fake smiles. Tears, laughter, tight hugs, and nervous hand-holding are our primary focus points.</p>
+        </div>
+        
+        <!-- Pillar 2 -->
+        <div class="card pillar-card reveal" style="transition-delay: 0.15s;">
+          <div class="pillar-icon"><i class="fa-solid fa-film"></i></div>
+          <h3>Artistic Boldness</h3>
+          <p>We use rich cinematic dark contrast, warm color palettes, and cinematic lens choices to give every photograph a classical, premium movie frame appearance.</p>
+        </div>
+        
+        <!-- Pillar 3 -->
+        <div class="card pillar-card reveal" style="transition-delay: 0.3s;">
+          <div class="pillar-icon"><i class="fa-solid fa-gem"></i></div>
+          <h3>Precise Execution</h3>
+          <p>We approach every shoot with high technical precision. Backups on dual card slots, state-of-the-art camera grids, and strict timeline delivery guarantees.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       BEHIND THE SCENES SHOWCASE
+       ========================================== -->
+  <section style="background-color: var(--bg-dark-charcoal); padding-top: 100px; padding-bottom: 120px;">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="script-text">Crew in Action</span>
+        <h2 class="section-title center">Behind The Scenes</h2>
+        <p>A transparent look at our photography family working hard to capture premium memories.</p>
+      </div>
+      
+      <div class="bts-grid">
+        <!-- Card 1 -->
+        <div class="bts-card reveal">
+          <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=600" alt="Vyuha team setting up heavy stabilizer rig for cinematic shoot">
+          <div class="bts-overlay">
+            <span class="bts-text">Camera Calibration</span>
+          </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="bts-card reveal" style="transition-delay: 0.1s;">
+          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=600" alt="Vyuha director checking wedding drone paths">
+          <div class="bts-overlay">
+            <span class="bts-text">Drone Scouting</span>
+          </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="bts-card reveal" style="transition-delay: 0.2s;">
+          <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=600" alt="Vyuha color grading photo editing session">
+          <div class="bts-overlay">
+            <span class="bts-text">Color Grading Panel</span>
+          </div>
+        </div>
+        
+        <!-- Card 4 -->
+        <div class="bts-card reveal" style="transition-delay: 0.3s;">
+          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600" alt="Vyuha team shooting candid couple moments">
+          <div class="bts-overlay">
+            <span class="bts-text">Candid Framing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-column footer-about">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">V</div>
+          <div class="logo-text">VYUHA<span>CREATION</span></div>
+        </a>
+        <p>A premium cinematic digital experience transforming fleeting memories into timeless, color-graded visual legacies. Trusted for weddings, corporate coverage, and high-energy college shoots.</p>
+        <div class="social-links">
+          <a href="https://instagram.com" class="social-icon" target="_blank" aria-label="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://youtube.com" class="social-icon" target="_blank" aria-label="Youtube Channel"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://facebook.com" class="social-icon" target="_blank" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="services.html">Services Portfolio</a></li>
+          <li><a href="gallery.html">Interactive Gallery</a></li>
+          <li><a href="contact.html">Book / Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Our Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html#wedding">Weddings Photography</a></li>
+          <li><a href="services.html#cinematic">Cinematic Wedding Reels</a></li>
+          <li><a href="services.html#pre-wedding">Pre-Wedding Shoots</a></li>
+          <li><a href="services.html#corporate">Corporate Coverage</a></li>
+          <li><a href="services.html#events">Cultural & College Shows</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Studio Details</h4>
+        <div class="footer-contact-info">
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Vyuha Studio Complex, Phase 3, Film City Road, Mumbai - 400065</span>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+91 98765 43210</span>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>bookings@vyuhacreation.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <span>&copy; 2026 Vyuha Creation. All Rights Reserved. Designed for premium visuals.</span>
+      <span>ISO 9001:2015 Visual Arts Studio</span>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Widget Button -->
+  <a href="#" class="whatsapp-widget whatsapp-booking-btn" data-service="Brand Story Consultation" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- ==========================================
+       SCRIPTS
+       ========================================== -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
