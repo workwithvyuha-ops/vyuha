@@ -223,7 +223,6 @@ header.scrolled {
   font-size: 0.9rem;
   font-weight: 500;
   letter-spacing: 1.5px;
-  text-transform: uppercase;
   color: var(--color-text-secondary);
   position: relative;
   padding: 8px 0;
@@ -322,7 +321,6 @@ header.scrolled {
 .mobile-nav a {
   font-family: var(--font-serif-brand);
   font-size: 1.6rem;
-  text-transform: uppercase;
   letter-spacing: 2px;
   color: var(--color-text-secondary);
   transition: var(--transition-fast);
@@ -380,7 +378,6 @@ header.scrolled {
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 2px;
-  text-transform: uppercase;
   cursor: pointer;
   transition: var(--transition-smooth);
   border: none;
@@ -655,7 +652,6 @@ section {
   display: block;
   font-family: var(--font-sans);
   font-size: 0.8rem;
-  text-transform: uppercase;
   letter-spacing: 2px;
   color: var(--color-text-secondary);
   margin-bottom: 10px;
@@ -869,7 +865,6 @@ footer {
   font-weight: 600;
   color: var(--color-gold);
   letter-spacing: 1.5px;
-  text-transform: uppercase;
   margin-bottom: 5px;
 }
 
