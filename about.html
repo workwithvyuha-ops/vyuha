@@ -82,10 +82,10 @@
     
     .timeline-card {
       background: var(--bg-card);
-      border: 1px solid rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-light);
       padding: 30px;
       border-radius: var(--border-radius-md);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.04);
       transition: var(--transition-smooth);
     }
     
@@ -127,7 +127,8 @@
       border-radius: var(--border-radius-md);
       overflow: hidden;
       aspect-ratio: 4/5;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      border: 1px solid var(--border-light);
     }
     
     .bts-card img {
@@ -207,6 +208,22 @@
 </head>
 <body>
 
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader-content">
+      <div class="camera-loader">
+        <div class="camera-body">
+          <div class="shutter-button"></div>
+          <div class="camera-lens">
+            <div class="focus-ring"></div>
+            <div class="aperture-blades"></div>
+          </div>
+        </div>
+      </div>
+      <div class="loader-text">V Y U H A</div>
+    </div>
+  </div>
+
   <!-- ==========================================
        HEADER / NAVIGATION BAR
        ========================================== -->
@@ -258,7 +275,7 @@
   <!-- ==========================================
        PAGE HERO
        ========================================== -->
-  <section style="padding: 160px 40px 60px 40px; text-align: center; background: linear-gradient(180deg, var(--bg-dark-charcoal) 0%, var(--bg-pure-black) 100%); border-bottom: 1px solid rgba(255,255,255,0.02);">
+  <section style="padding: 160px 40px 60px 40px; text-align: center; background: linear-gradient(180deg, var(--bg-dark-charcoal) 0%, var(--bg-pure-black) 100%); border-bottom: 1px solid var(--border-light);">
     <div class="container reveal">
       <span class="script-text">Our Philosophy</span>
       <h1 style="font-size: clamp(2.2rem, 5vw, 4rem); font-family: var(--font-serif-brand); margin-top: 10px;">The Soul Behind the Screen</h1>
@@ -280,7 +297,7 @@
           <p>When the pandemic hit in 2020, everything went dark. But instead of quitting, I treated it as a crucible. I locked myself in a room for 10 hours a day, studying Hollywood color grading, mastering complex editing structures, and testing dynamic camera rigs. Vyuha Creation was born out of that absolute dedication. Today, we are not just a photographer; we are a tight-knit family of cinematic creators who love visual engineering.</p>
         </div>
         <div class="intro-image-container reveal" style="transition-delay: 0.2s;">
-          <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=1200" alt="Sourav founder of Vyuha Creation taking standard outdoor cinematic camera photo">
+          <img src="images/camera_studio.jpg" alt="Professional Camera by Vyuha Creation">
         </div>
       </div>
     </div>
@@ -387,33 +404,33 @@
       <div class="bts-grid">
         <!-- Card 1 -->
         <div class="bts-card reveal">
-          <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=600" alt="Vyuha team setting up heavy stabilizer rig for cinematic shoot">
+          <img src="images/hero_lens_bg.jpg" alt="Leica Noctilux-M Lens Aperture Blades Calibration" loading="lazy">
           <div class="bts-overlay">
-            <span class="bts-text">Camera Calibration</span>
+            <span class="bts-text">Lens Mechanics</span>
           </div>
         </div>
         
         <!-- Card 2 -->
         <div class="bts-card reveal" style="transition-delay: 0.1s;">
-          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=600" alt="Vyuha director checking wedding drone paths">
+          <img src="images/camera_studio.jpg" alt="Leica Camera Body Setup Check" loading="lazy">
           <div class="bts-overlay">
-            <span class="bts-text">Drone Scouting</span>
+            <span class="bts-text">Gear Calibration</span>
           </div>
         </div>
         
         <!-- Card 3 -->
         <div class="bts-card reveal" style="transition-delay: 0.2s;">
-          <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=600" alt="Vyuha color grading photo editing session">
+          <img src="images/viewfinder_screen.jpg" alt="Focusing Screen Viewfinder Calibration" loading="lazy">
           <div class="bts-overlay">
-            <span class="bts-text">Color Grading Panel</span>
+            <span class="bts-text">Viewfinder Grid</span>
           </div>
         </div>
         
         <!-- Card 4 -->
         <div class="bts-card reveal" style="transition-delay: 0.3s;">
-          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600" alt="Vyuha team shooting candid couple moments">
+          <img src="images/camera_dial.jpg" alt="Camera Shooting Mode Selectors Dial" loading="lazy">
           <div class="bts-overlay">
-            <span class="bts-text">Candid Framing</span>
+            <span class="bts-text">Shooting Modes</span>
           </div>
         </div>
       </div>

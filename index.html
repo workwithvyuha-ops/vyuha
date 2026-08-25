@@ -23,8 +23,18 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1920') no-repeat center center/cover;
       overflow: hidden;
+      background-color: var(--bg-pure-black);
+    }
+    
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.7)), url('images/hero_lens_bg.jpg') no-repeat center center/cover;
+      z-index: 1;
     }
     
     .hero-glow {
@@ -32,11 +42,11 @@
       width: 50vw;
       height: 50vw;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(244, 160, 0, 0.12) 0%, transparent 60%);
+      background: radial-gradient(circle, rgba(197, 160, 89, 0.1) 0%, transparent 60%);
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      z-index: 1;
+      z-index: 2;
       pointer-events: none;
       animation: pulsate 8s infinite alternate ease-in-out;
     }
@@ -48,7 +58,7 @@
     
     .hero-content {
       text-align: center;
-      z-index: 2;
+      z-index: 3;
       max-width: 900px;
       padding: 0 20px;
     }
@@ -56,7 +66,7 @@
     .hero-subtitle {
       font-size: 0.9rem;
       letter-spacing: 5px;
-      color: var(--color-gold);
+      color: var(--color-gold-light);
       margin-bottom: 20px;
       font-weight: 600;
     }
@@ -67,7 +77,6 @@
       line-height: 1.1;
       color: var(--color-text-primary);
       margin-bottom: 25px;
-      text-shadow: 0 4px 15px rgba(0,0,0,0.6);
     }
     
     .hero-desc {
@@ -95,7 +104,7 @@
       position: relative;
       border-radius: var(--border-radius-lg);
       overflow: hidden;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.06);
     }
     
     .intro-image-container img {
@@ -114,7 +123,7 @@
       position: absolute;
       bottom: 30px;
       right: 30px;
-      background: rgba(18, 18, 18, 0.85);
+      background: rgba(255, 255, 255, 0.9);
       border: 1px solid var(--color-gold);
       padding: 20px;
       border-radius: var(--border-radius-md);
@@ -123,13 +132,14 @@
       flex-direction: column;
       align-items: center;
       z-index: 2;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.04);
     }
     
     .intro-badge .number {
       font-size: 2.2rem;
       font-family: var(--font-serif-brand);
       font-weight: 700;
-      color: var(--color-gold);
+      color: var(--color-gold-light);
       line-height: 1;
     }
     
@@ -142,7 +152,7 @@
     
     /* Featured Reel Card */
     .featured-reel {
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1920') no-repeat center center/cover;
+      background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.6)), url('images/hero_lens_bg.jpg') no-repeat center center/cover;
       background-attachment: fixed;
       text-align: center;
       padding: 150px 40px;
@@ -151,12 +161,12 @@
     .play-card {
       max-width: 800px;
       margin: 0 auto;
-      background: rgba(18, 18, 18, 0.4);
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-light);
       border-radius: var(--border-radius-lg);
       padding: 60px 40px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.06);
       position: relative;
     }
     
@@ -197,7 +207,7 @@
     
     .play-icon-wrap i {
       font-size: 2rem;
-      color: var(--bg-pure-black);
+      color: #ffffff;
       margin-left: 6px;
     }
     
@@ -210,7 +220,7 @@
       font-size: 2.5rem;
       color: var(--color-gold);
       margin-bottom: 25px;
-      background: linear-gradient(135deg, #F4A000, #FFB933);
+      background: var(--gold-gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -220,9 +230,8 @@
       text-align: center;
       max-width: 800px;
       margin: 0 auto;
-      background: rgba(18, 18, 18, 0.4);
-      backdrop-filter: blur(15px);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      background: var(--bg-dark-charcoal);
+      border: 1px solid var(--border-light);
       border-radius: var(--border-radius-lg);
       padding: 60px 40px;
       position: relative;
@@ -259,7 +268,7 @@
     .testimonial-meta {
       font-size: 0.8rem;
       letter-spacing: 2px;
-      color: var(--color-gold);
+      color: var(--color-gold-light);
       margin-top: 5px;
     }
     
@@ -289,10 +298,37 @@
         width: 100%;
         max-width: 280px;
       }
+      .focus-adjuster-container {
+        right: 20px !important;
+        bottom: 20px !important;
+        width: calc(100% - 40px) !important;
+      }
+      .viewfinder-hud {
+        top: 20px !important;
+        left: 20px !important;
+        right: 20px !important;
+        bottom: 20px !important;
+      }
     }
   </style>
 </head>
 <body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader-content">
+      <div class="camera-loader">
+        <div class="camera-body">
+          <div class="shutter-button"></div>
+          <div class="camera-lens">
+            <div class="focus-ring"></div>
+            <div class="aperture-blades"></div>
+          </div>
+        </div>
+      </div>
+      <div class="loader-text">V Y U H A</div>
+    </div>
+  </div>
 
   <!-- ==========================================
        HEADER / NAVIGATION BAR
@@ -346,7 +382,45 @@
        HERO SECTION
        ========================================== -->
   <section class="hero" id="hero-section">
+    <div class="hero-bg"></div>
     <div class="hero-glow"></div>
+    
+    <!-- Viewfinder HUD / Focus Adjuster Overlay -->
+    <div class="viewfinder-hud">
+      <div class="hud-corners">
+        <div class="corner tl"></div>
+        <div class="corner tr"></div>
+        <div class="corner bl"></div>
+        <div class="corner br"></div>
+      </div>
+      <div class="hud-center">
+        <span class="focus-bracket-left">[</span>
+        <span class="focus-dot">•</span>
+        <span class="focus-bracket-right">]</span>
+      </div>
+      <div class="hud-metrics">
+        <span>SS 1/250</span>
+        <span>F/2.8</span>
+        <span>ISO 100</span>
+        <span class="focus-indicator-val">MF [1.5m]</span>
+      </div>
+    </div>
+    
+    <!-- Interactive Focus Slider Control -->
+    <div class="focus-adjuster-container">
+      <div class="focus-dial-label">
+        <span><i class="fa-solid fa-sliders"></i> LENS FOCUS</span>
+      </div>
+      <input type="range" id="focus-slider" min="0" max="100" value="30" class="focus-slider">
+      <div class="focus-dial-markers">
+        <span>0.28m</span>
+        <span>1.5m</span>
+        <span>3.0m</span>
+        <span>∞</span>
+      </div>
+      <button id="autofocus-btn" class="btn btn-autofocus">AF-S</button>
+    </div>
+
     <div class="hero-content">
       <span class="hero-subtitle reveal">Photography & Videography Studio</span>
       <h1 class="hero-title reveal">Where Memories Become Cinematic</h1>
@@ -365,7 +439,7 @@
     <div class="container">
       <div class="intro-grid">
         <div class="intro-image-container reveal">
-          <img src="https://images.unsplash.com/photo-1520854221256-17451cc3599a?q=80&w=1200" alt="Beautiful wedding portrait at golden hour by Vyuha Creation">
+          <img src="images/camera_studio.jpg" alt="Professional Camera Setup by Vyuha Creation">
           <div class="intro-badge">
             <span class="number">8+</span>
             <span class="label">Years of Stories</span>
@@ -436,113 +510,6 @@
           <a href="services.html" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.75rem; margin-top: 10px;">Packages & Details</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       TESTIMONIALS SECTION
-       ========================================== -->
-  <section class="testimonials">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="script-text">Real Stories</span>
-        <h2 class="section-title center">Words From Our Families</h2>
-        <p>Read about the cinematic experiences we have co-created with couples and corporate partners worldwide.</p>
-      </div>
-      
-      <!-- Static Testimonial Card with dynamic visuals -->
-      <div class="testimonial-card reveal" style="transition-delay: 0.2s;">
-        <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200" alt="Rohan and Priya, happy Vyuha Creation couple">
-        <p class="testimonial-quote">"Vyuha Creation did not just capture our wedding; they made it look like a Hollywood film. The cinematic reels they prepared were ready in 48 hours, and they literally brought tears to our eyes. Pro crew, fantastic color grading, and extremely polite demeanor throughout!"</p>
-        <h4 class="testimonial-author">Priya & Rohan Sharma</h4>
-        <div class="testimonial-meta">Wedding & Pre-Wedding Shoot</div>
-        <div class="testimonial-stars">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       INSTAGRAM FEED SHOWCASE
-       ========================================== -->
-  <section class="instagram-showcase reveal">
-    <div class="container">
-      <div class="section-header">
-        <span class="script-text">Visual Journal</span>
-        <h2 class="section-title center">Our Instagram Feed</h2>
-        <p>Follow our daily storytelling, recent wedding chronicles, behind-the-scenes magic, and latest work <a href="https://www.instagram.com/vyuhacreations/" target="_blank" style="color: var(--color-gold); font-weight: 600;">@vyuhacreations</a>.</p>
-      </div>
-
-      <div class="instagram-grid">
-        <!-- Post 1 -->
-        <a href="https://www.instagram.com/vyuhacreations/" target="_blank" class="instagram-item">
-          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600" alt="Beautiful Indian bridal walk captured by Vyuha Creation" loading="lazy">
-          <div class="instagram-overlay">
-            <i class="fa-brands fa-instagram"></i>
-            <span class="instagram-tag">@vyuhacreations</span>
-            <p class="instagram-caption">Bridal walk of absolute grace and cinematic lighting.</p>
-          </div>
-        </a>
-
-        <!-- Post 2 -->
-        <a href="https://www.instagram.com/vyuhacreations/" target="_blank" class="instagram-item">
-          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600" alt="Cinematic slow-motion couples dance captured by Vyuha Creation" loading="lazy">
-          <div class="instagram-overlay">
-            <i class="fa-brands fa-instagram"></i>
-            <span class="instagram-tag">@vyuhacreations</span>
-            <p class="instagram-caption">Capturing raw emotion, stolen glances, and first dances.</p>
-          </div>
-        </a>
-
-        <!-- Post 3 -->
-        <a href="https://www.instagram.com/vyuhacreations/" target="_blank" class="instagram-item">
-          <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=600" alt="Energetic concert stage lights captured by Vyuha Creation" loading="lazy">
-          <div class="instagram-overlay">
-            <i class="fa-brands fa-instagram"></i>
-            <span class="instagram-tag">@vyuhacreations</span>
-            <p class="instagram-caption">High-energy college festivals and concert stage magic.</p>
-          </div>
-        </a>
-
-        <!-- Post 4 -->
-        <a href="https://www.instagram.com/vyuhacreations/" target="_blank" class="instagram-item">
-          <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=80&w=600" alt="Pre-wedding outdoor couple shoot captured by Vyuha Creation" loading="lazy">
-          <div class="instagram-overlay">
-            <i class="fa-brands fa-instagram"></i>
-            <span class="instagram-tag">@vyuhacreations</span>
-            <p class="instagram-caption">Thematic pre-wedding aesthetics in golden light sweeps.</p>
-          </div>
-        </a>
-
-        <!-- Post 5 -->
-        <a href="https://www.instagram.com/vyuhacreations/" target="_blank" class="instagram-item">
-          <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=600" alt="Landscape drone establishing shot by Vyuha Creation" loading="lazy">
-          <div class="instagram-overlay">
-            <i class="fa-brands fa-instagram"></i>
-            <span class="instagram-tag">@vyuhacreations</span>
-            <p class="instagram-caption">Establishing layouts and stunning cinematic drone fields.</p>
-          </div>
-        </a>
-
-        <!-- Post 6 -->
-        <a href="https://www.instagram.com/vyuhacreations/" target="_blank" class="instagram-item">
-          <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?q=80&w=600" alt="Luxury wedding reception detail capture by Vyuha Creation" loading="lazy">
-          <div class="instagram-overlay">
-            <i class="fa-brands fa-instagram"></i>
-            <span class="instagram-tag">@vyuhacreations</span>
-            <p class="instagram-caption">Crafting elegant and visual stories of timeless legacies.</p>
-          </div>
-        </a>
-      </div>
-
-      <a href="https://www.instagram.com/vyuhacreations/" target="_blank" class="btn btn-secondary" style="margin-top: 10px;">
-        <i class="fa-brands fa-instagram" style="margin-right: 8px;"></i> Visit Profile
-      </a>
     </div>
   </section>
 

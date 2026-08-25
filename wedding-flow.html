@@ -26,8 +26,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(255, 255, 255, 0.015);
-      border: 1px solid rgba(255, 255, 255, 0.04);
+      background: var(--bg-dark-charcoal);
+      border: 1px solid var(--border-light);
       padding: 12px 18px;
       border-radius: var(--border-radius-md);
       margin-bottom: 10px;
@@ -35,7 +35,7 @@
     }
     
     .detail-inclusions-list li:hover, .summary-details-list li:hover {
-      background: rgba(255, 255, 255, 0.03);
+      background: var(--bg-card-hover);
       border-color: rgba(244, 160, 0, 0.2);
       box-shadow: var(--gold-border-glow);
     }
@@ -61,7 +61,7 @@
     .remove-inclusion-btn {
       background: none;
       border: none;
-      color: rgba(255, 255, 255, 0.3);
+      color: var(--color-text-dark);
       font-size: 1.3rem;
       cursor: pointer;
       padding: 4px 8px;
@@ -108,13 +108,13 @@
     /* Dynamic Add Inclusion Sub-modal Panel */
     .sub-modal-panel {
       display: none;
-      background: rgba(18, 18, 18, 0.98);
+      background: rgba(255, 255, 255, 0.98);
       backdrop-filter: blur(25px);
-      border: 1px solid rgba(244, 160, 0, 0.2);
+      border: 1px solid var(--border-medium);
       border-radius: var(--border-radius-lg);
       padding: 35px;
       margin-top: 30px;
-      box-shadow: var(--gold-border-glow), 0 10px 40px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
       animation: slideDownFade 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
     
@@ -132,24 +132,24 @@
     }
 
     .event-summary-card {
-      background: rgba(255, 255, 255, 0.015);
-      border: 1px solid rgba(255, 255, 255, 0.04);
+      background: var(--bg-dark-charcoal);
+      border: 1px solid var(--border-light);
       border-radius: var(--border-radius-md);
       padding: 25px 30px;
       transition: var(--transition-smooth);
     }
     
     .event-summary-card:hover {
-      border-color: rgba(255, 255, 255, 0.08);
-      background: rgba(255, 255, 255, 0.025);
+      border-color: var(--border-medium);
+      background: var(--bg-card-hover);
     }
     
     .event-summary-card h5 {
       font-family: var(--font-serif-brand);
-      color: var(--color-gold);
+      color: var(--color-gold-light);
       font-size: 1.25rem;
       margin-bottom: 15px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid var(--border-light);
       padding-bottom: 10px;
       display: flex;
       align-items: center;
@@ -158,6 +158,22 @@
   </style>
 </head>
 <body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader-content">
+      <div class="camera-loader">
+        <div class="camera-body">
+          <div class="shutter-button"></div>
+          <div class="camera-lens">
+            <div class="focus-ring"></div>
+            <div class="aperture-blades"></div>
+          </div>
+        </div>
+      </div>
+      <div class="loader-text">V Y U H A</div>
+    </div>
+  </div>
 
   <!-- ==========================================
        HEADER / NAVIGATION BAR
@@ -210,7 +226,7 @@
   <!-- ==========================================
        PAGE HERO
        ========================================== -->
-  <section style="padding: 160px 40px 60px 40px; text-align: center; background: linear-gradient(180deg, var(--bg-dark-charcoal) 0%, var(--bg-pure-black) 100%); border-bottom: 1px solid rgba(255,255,255,0.02);">
+  <section style="padding: 160px 40px 60px 40px; text-align: center; background: linear-gradient(180deg, var(--bg-dark-charcoal) 0%, var(--bg-pure-black) 100%); border-bottom: 1px solid var(--border-light);">
     <div class="container reveal">
       <span class="script-text">Wedding Special</span>
       <h1 style="font-size: clamp(2.2rem, 5vw, 4rem); font-family: var(--font-serif-brand); margin-top: 10px;">Wedding Service Flow</h1>
@@ -312,7 +328,7 @@
               
               <div class="form-group">
                 <label for="detail-add-inclusion-select">Select Inclusion Item</label>
-                <select id="detail-add-inclusion-select" class="form-control" style="background-color: #121212;">
+                <select id="detail-add-inclusion-select" class="form-control" style="background-color: var(--bg-dark-charcoal); color: var(--color-text-primary);">
                   <!-- Options dynamically populated from global list -->
                 </select>
               </div>
@@ -442,7 +458,7 @@
               
               <div class="form-group">
                 <label for="add-inclusion-select">Select Inclusion Item</label>
-                <select id="add-inclusion-select" class="form-control" style="background-color: #121212;">
+                <select id="add-inclusion-select" class="form-control" style="background-color: var(--bg-dark-charcoal); color: var(--color-text-primary);">
                   <!-- Dynamically populated from global list -->
                 </select>
               </div>

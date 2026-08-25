@@ -26,8 +26,8 @@
     }
     
     .filter-btn {
-      background: rgba(18, 18, 18, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: var(--bg-dark-charcoal);
+      border: 1px solid var(--border-light);
       color: var(--color-text-secondary);
       padding: 10px 24px;
       font-family: var(--font-sans);
@@ -59,7 +59,7 @@
       width: 100%;
       margin-bottom: 24px;
       background: var(--bg-card);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-light);
       border-radius: var(--border-radius-md);
       overflow: hidden;
       position: relative;
@@ -131,9 +131,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--bg-pure-black);
+      color: #111111;
       font-size: 0.9rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
       z-index: 2;
     }
     
@@ -152,6 +152,22 @@
   </style>
 </head>
 <body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader-content">
+      <div class="camera-loader">
+        <div class="camera-body">
+          <div class="shutter-button"></div>
+          <div class="camera-lens">
+            <div class="focus-ring"></div>
+            <div class="aperture-blades"></div>
+          </div>
+        </div>
+      </div>
+      <div class="loader-text">V Y U H A</div>
+    </div>
+  </div>
 
   <!-- ==========================================
        HEADER / NAVIGATION BAR
@@ -204,7 +220,7 @@
   <!-- ==========================================
        PAGE HERO
        ========================================== -->
-  <section style="padding: 160px 40px 60px 40px; text-align: center; background: linear-gradient(180deg, var(--bg-dark-charcoal) 0%, var(--bg-pure-black) 100%); border-bottom: 1px solid rgba(255,255,255,0.02);">
+  <section style="padding: 160px 40px 60px 40px; text-align: center; background: linear-gradient(180deg, var(--bg-dark-charcoal) 0%, var(--bg-pure-black) 100%); border-bottom: 1px solid var(--border-light);">
     <div class="container reveal">
       <span class="script-text">Our Masterpieces</span>
       <h1 style="font-size: clamp(2.2rem, 5vw, 4rem); font-family: var(--font-serif-brand); margin-top: 10px;">The Cinematic Gallery</h1>
@@ -231,94 +247,54 @@
       <!-- Masonry Grid -->
       <div class="masonry-grid reveal" style="transition-delay: 0.2s;" id="gallery-grid">
         
-        <!-- Item 1: Wedding Tall -->
-        <div class="gallery-item" data-category="weddings" data-highres="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200">
-          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800" alt="Cinematic outdoor wedding setup by Vyuha Creation" loading="lazy">
+        <!-- Item 1: Weddings -->
+        <div class="gallery-item" data-category="weddings" data-highres="images/hero_lens_bg.jpg">
+          <img src="images/hero_lens_bg.jpg" alt="Leica Noctilux-M Lens Aperture Blades" loading="lazy">
           <div class="item-overlay">
-            <span class="item-tag">Wedding</span>
-            <h4 class="item-title">Golden Grandeur</h4>
-            <p class="item-caption">Traditional outdoor lawn wedding setup during twilight.</p>
+            <span class="item-tag">Weddings / Gear</span>
+            <h4 class="item-title">Noctilux Optics</h4>
+            <p class="item-caption">Macro shot of our ultra-bright f/0.95 lens element.</p>
           </div>
         </div>
         
-        <!-- Item 2: Pre-Wedding Sunsets -->
-        <div class="gallery-item" data-category="pre-wedding" data-highres="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200">
-          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800" alt="Beautiful couple sunset pre-wedding portrait" loading="lazy">
+        <!-- Item 2: Pre-Wedding -->
+        <div class="gallery-item" data-category="pre-wedding" data-highres="images/viewfinder_screen.jpg">
+          <img src="images/viewfinder_screen.jpg" alt="Autofocus Viewfinder Screen Calibration" loading="lazy">
           <div class="item-overlay">
-            <span class="item-tag">Pre-Wedding</span>
-            <h4 class="item-title">Whispering Sunset</h4>
-            <p class="item-caption">Warm golden light portrait along the countryside hills.</p>
+            <span class="item-tag">Pre-Wedding / Framing</span>
+            <h4 class="item-title">Autofocus Plane</h4>
+            <p class="item-caption">Checking frame crop rules and golden hour focus lines.</p>
           </div>
         </div>
         
-        <!-- Item 3: Video Reel with special tag -->
+        <!-- Item 3: Video Reel -->
         <div class="gallery-item play-btn-trigger" data-category="reels" data-video-url="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
           <div class="video-tag"><i class="fa-solid fa-play"></i></div>
-          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800" alt="Bridal cinematic reel frame preview" loading="lazy">
+          <img src="images/camera_studio.jpg" alt="Mirrorless Camera Setup Video Capture" loading="lazy">
           <div class="item-overlay">
             <span class="item-tag">Reels / Cinematic</span>
-            <h4 class="item-title">Ethereal Steps</h4>
-            <p class="item-caption">Cinematic walkthrough showcasing slow-motion bridal entry.</p>
+            <h4 class="item-title">Visual Engineering</h4>
+            <p class="item-caption">Play sample cinematic camera setup calibration walkthrough.</p>
           </div>
         </div>
         
-        <!-- Item 4: Corporate High-res -->
-        <div class="gallery-item" data-category="corporate" data-highres="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=1200">
-          <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=800" alt="Corporate presentation event cover" loading="lazy">
+        <!-- Item 4: Corporate -->
+        <div class="gallery-item" data-category="corporate" data-highres="images/camera_studio.jpg">
+          <img src="images/camera_studio.jpg" alt="Leica Camera Body and Lens Profile" loading="lazy">
           <div class="item-overlay">
-            <span class="item-tag">Corporate</span>
-            <h4 class="item-title">Modern Keynote</h4>
-            <p class="item-caption">High-precision executive conference documentation.</p>
+            <span class="item-tag">Corporate / Gear</span>
+            <h4 class="item-title">Summilux Rig</h4>
+            <p class="item-caption">High-precision camera equipment documentation.</p>
           </div>
         </div>
         
-        <!-- Item 5: Indian Wedding -->
-        <div class="gallery-item" data-category="weddings" data-highres="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=1200">
-          <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=800" alt="Indian traditional wedding ceremony groom and bride" loading="lazy">
+        <!-- Item 5: Events -->
+        <div class="gallery-item" data-category="events" data-highres="images/camera_dial.jpg">
+          <img src="images/camera_dial.jpg" alt="Camera Mode Selector Dial Calibration" loading="lazy">
           <div class="item-overlay">
-            <span class="item-tag">Wedding</span>
-            <h4 class="item-title">Vermilion Legacy</h4>
-            <p class="item-caption">Vibrant traditional Indian wedding ceremony captures.</p>
-          </div>
-        </div>
-        
-        <!-- Item 6: Events Concert -->
-        <div class="gallery-item" data-category="events" data-highres="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1200">
-          <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800" alt="College music festival concert photography" loading="lazy">
-          <div class="item-overlay">
-            <span class="item-tag">Events / Concert</span>
-            <h4 class="item-title">Sonic Resonance</h4>
-            <p class="item-caption">High-energy college music festival night stage coverage.</p>
-          </div>
-        </div>
-        
-        <!-- Item 7: Pre-Wedding Forest -->
-        <div class="gallery-item" data-category="pre-wedding" data-highres="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1200">
-          <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=800" alt="Couple portrait in dense green forest" loading="lazy">
-          <div class="item-overlay">
-            <span class="item-tag">Pre-Wedding</span>
-            <h4 class="item-title">Verdant Embrace</h4>
-            <p class="item-caption">Atmospheric deep-woods couple visual narrative.</p>
-          </div>
-        </div>
-        
-        <!-- Item 8: Corporate Stage -->
-        <div class="gallery-item" data-category="corporate" data-highres="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200">
-          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800" alt="Premium corporate stage event with lights" loading="lazy">
-          <div class="item-overlay">
-            <span class="item-tag">Corporate</span>
-            <h4 class="item-title">Vanguard Summit</h4>
-            <p class="item-caption">Dramatic stage framing at an international tech forum.</p>
-          </div>
-        </div>
-        
-        <!-- Item 9: Event Spotlight -->
-        <div class="gallery-item" data-category="events" data-highres="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200">
-          <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800" alt="Stage spotlight and crowd overlay" loading="lazy">
-          <div class="item-overlay">
-            <span class="item-tag">Events / Show</span>
-            <h4 class="item-title">Ignite the Night</h4>
-            <p class="item-caption">Cultural event spotlight casting dynamic beams on crowd.</p>
+            <span class="item-tag">Events / Operations</span>
+            <h4 class="item-title">Exposure Command</h4>
+            <p class="item-caption">Managing custom shutter speeds and lens apertures.</p>
           </div>
         </div>
       </div>
