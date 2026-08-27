@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollObserver();
   initVideoModals();
   initWhatsAppPreFill();
+  initGlobalFocusWidget();
+  initHeroViewfinder();
 });
 
 /**
@@ -173,4 +175,142 @@ function initWhatsAppPreFill() {
       btn.setAttribute('href', whatsappUrl);
     });
   });
+}
+
+/**
+ * Handle Preloader Dismissal on Page Fully Loaded
+ */
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    preloader.classList.add('fade-out');
+    setTimeout(() => {
+      preloader.remove(); // Remove loader from page flow
+    }, 600);
+  }
+});
+
+/**
+ * Dynamic setup of Global Floating Focus Adjuster dial/slider
+ */
+function initGlobalFocusWidget() {
+  const widget = document.createElement('div');
+  widget.className = 'floating-focus-adjuster';
+  widget.innerHTML = `
+    <div class="adjuster-panel">
+      <div class="focus-dial-label">
+        <span><i class="fa-solid fa-sliders"></i> LENS BLUR</span>
+      </div>
+      <input type="range" id="global-focus-slider" min="0" max="100" value="100" class="focus-slider">
+      <div class="focus-dial-markers">
+        <span>0.28m</span>
+        <span>∞</span>
+      </div>
+    </div>
+    <button class="adjuster-btn" aria-label="Adjust Page Focus" title="Lens Manual Focus">
+      <i class="fa-solid fa-camera"></i>
+    </button>
+  `;
+  document.body.appendChild(widget);
+
+  const btn = widget.querySelector('.adjuster-btn');
+  const panel = widget.querySelector('.adjuster-panel');
+  const slider = widget.querySelector('#global-focus-slider');
+
+  // Toggle active styling
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    widget.classList.toggle('active');
+  });
+
+  panel.addEventListener('click', (e) => {
+    e.stopPropagation(); // Avoid triggering document clicks
+  });
+
+  document.addEventListener('click', () => {
+    widget.classList.remove('active');
+  });
+
+  slider.addEventListener('input', (e) => {
+    const val = parseInt(e.target.value);
+    // Blur ranges from 0px (at 100%) to 12px (at 0%)
+    const blurPx = ((100 - val) / 100) * 12;
+    document.documentElement.style.setProperty('--focus-blur', `${blurPx}px`);
+  });
+}
+
+/**
+ * Homepage Hero Viewfinder & Manual Focus interaction
+ */
+function initHeroViewfinder() {
+  const slider = document.getElementById('focus-slider');
+  const bg = document.querySelector('.hero-bg');
+  const hudCenter = document.querySelector('.hud-center');
+  const indicatorVal = document.querySelector('.focus-indicator-val');
+  const afBtn = document.getElementById('autofocus-btn');
+
+  if (!slider || !bg) return;
+
+  let hasBeeped = false;
+
+  function playFocusBeep() {
+    try {
+      const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const playBeep = (time, duration) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(2200, time);
+        gain.gain.setValueAtTime(0.03, time);
+        gain.gain.exponentialRampToValueAtTime(0.001, time + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start(time);
+        osc.stop(time + duration);
+      };
+
+      const now = audioCtx.currentTime;
+      playBeep(now, 0.08);
+      playBeep(now + 0.12, 0.08); // Camera dual lock beep
+    } catch (e) {
+      console.log('Audio focus locked beep failed', e);
+    }
+  }
+
+  function updateFocus(val, isAuto = false) {
+    // Slider value is 0 to 100.
+    // Blur ranges from 15px (at 0%) to 0px (at 100%)
+    const blurPx = ((100 - val) / 100) * 15;
+    bg.style.setProperty('--focus-blur', `${blurPx}px`);
+
+    // Lock updates
+    if (val >= 98) {
+      hudCenter.classList.add('focus-locked');
+      indicatorVal.textContent = 'AF-S [ • ]';
+      if (!hasBeeped && !isAuto) {
+        playFocusBeep();
+        hasBeeped = true;
+      }
+    } else {
+      hudCenter.classList.remove('focus-locked');
+      const distance = (0.28 + (val / 100) * 10).toFixed(2);
+      indicatorVal.textContent = `MF [${distance}m]`;
+      hasBeeped = false;
+    }
+  }
+
+  slider.addEventListener('input', (e) => {
+    afBtn.classList.remove('active');
+    updateFocus(parseInt(e.target.value));
+  });
+
+  afBtn.addEventListener('click', () => {
+    afBtn.classList.add('active');
+    slider.value = 100;
+    updateFocus(100, true);
+    playFocusBeep();
+  });
+
+  // Start blurry to invite interaction
+  updateFocus(parseInt(slider.value));
 }
